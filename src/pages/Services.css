@@ -29,6 +29,14 @@
   font-size: 4rem;
   margin-bottom: var(--spacing-lg);
   animation: float 3s ease-in-out infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.featured-service-icon svg {
+  width: 4rem;
+  height: 4rem;
 }
 
 @keyframes float {
@@ -73,6 +81,13 @@
 
 .service-duration .icon {
   font-size: 1.1rem;
+  display: inline-flex;
+  align-items: center;
+}
+
+.service-duration .icon svg {
+  width: 1.1rem;
+  height: 1.1rem;
 }
 
 .service-price-large {
@@ -112,6 +127,13 @@
 
 .category-icon {
   font-size: 2.5rem;
+  display: inline-flex;
+  align-items: center;
+}
+
+.category-icon svg {
+  width: 2.5rem;
+  height: 2.5rem;
 }
 
 .services-grid {
@@ -154,6 +176,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.service-icon-small svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: var(--color-primary);
 }
 
 .service-info {

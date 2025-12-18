@@ -72,6 +72,15 @@
 .booksy-feature .feature-icon {
   font-size: 2.5rem;
   margin-bottom: var(--spacing-xs);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-accent);
+}
+
+.booksy-feature .feature-icon svg {
+  width: 2.5rem;
+  height: 2.5rem;
 }
 
 .booksy-feature span:not(.feature-icon) {
@@ -173,6 +182,18 @@
   background-color: var(--color-bg-light);
   border-radius: var(--border-radius);
   box-shadow: var(--shadow-sm);
+}
+
+.info-item .info-icon {
+  font-size: 2.5rem;
+  color: var(--color-accent);
+  margin-bottom: var(--spacing-sm);
+  display: block;
+}
+
+.info-item .info-icon svg {
+  width: 2.5rem;
+  height: 2.5rem;
 }
 
 .info-item h3 {

@@ -1,13 +1,14 @@
 import { Link } from 'react-router-dom'
+import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaFacebook, FaInstagram, FaTwitter, FaYelp } from 'react-icons/fa'
 import logoImage from '../images/logo and favicon.png'
 import './Footer.css'
 
 const Footer = () => {
   const socialLinks = [
-    { name: 'Facebook', icon: 'facebook', url: '#' },
-    { name: 'Instagram', icon: 'instagram', url: '#' },
-    { name: 'Twitter', icon: 'twitter', url: '#' },
-    { name: 'Yelp', icon: 'yelp', url: '#' },
+    { name: 'Facebook', Icon: FaFacebook, url: '#' },
+    { name: 'Instagram', Icon: FaInstagram, url: '#' },
+    { name: 'Twitter', Icon: FaTwitter, url: '#' },
+    { name: 'Yelp', Icon: FaYelp, url: '#' },
   ]
 
   const businessHours = [
@@ -34,18 +35,21 @@ const Footer = () => {
                 and exceptional grooming services since day one.
               </p>
               <div className="footer-social">
-                {socialLinks.map((social, index) => (
-                  <a 
-                    key={index}
-                    href={social.url}
-                    className={`social-link social-${social.icon}`}
-                    aria-label={social.name}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <span className="social-icon">{social.name.charAt(0)}</span>
-                  </a>
-                ))}
+                {socialLinks.map((social, index) => {
+                  const IconComponent = social.Icon
+                  return (
+                    <a 
+                      key={index}
+                      href={social.url}
+                      className="social-link"
+                      aria-label={social.name}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <IconComponent className="social-icon" />
+                    </a>
+                  )
+                })}
               </div>
             </div>
 
@@ -77,15 +81,15 @@ const Footer = () => {
               <h4 className="footer-heading">Get in Touch</h4>
               <ul className="footer-contact">
                 <li className="contact-item">
-                  <span className="contact-icon">📞</span>
+                  <FaPhone className="contact-icon" />
                   <a href="tel:+12394657270">(239) 465-7270</a>
                 </li>
                 <li className="contact-item">
-                  <span className="contact-icon">✉️</span>
+                  <FaEnvelope className="contact-icon" />
                   <a href="mailto:ldbcutsbarbershop@gmail.com">ldbcutsbarbershop@gmail.com</a>
                 </li>
                 <li className="contact-item">
-                  <span className="contact-icon">📍</span>
+                  <FaMapMarkerAlt className="contact-icon" />
                   <span>
                     8951 Bonita Beach Rd SE<br />
                     Suite 580, Unit 8<br />

@@ -1,4 +1,12 @@
 import { useState } from 'react'
+import { 
+  FaCalendarAlt, 
+  FaScissors, 
+  FaClock, 
+  FaCheckCircle, 
+  FaSyncAlt, 
+  FaCreditCard 
+} from 'react-icons/fa'
 import './Booking.css'
 
 const Booking = () => {
@@ -41,19 +49,19 @@ const Booking = () => {
               <div className="booksy-preview-content">
                 <div className="booksy-features">
                   <div className="booksy-feature">
-                    <span className="feature-icon">📅</span>
+                    <FaCalendarAlt className="feature-icon" />
                     <span>View Real-Time Availability</span>
                   </div>
                   <div className="booksy-feature">
-                    <span className="feature-icon">✂️</span>
+                    <FaScissors className="feature-icon" />
                     <span>Choose Your Service</span>
                   </div>
                   <div className="booksy-feature">
-                    <span className="feature-icon">⏰</span>
+                    <FaClock className="feature-icon" />
                     <span>Select Date & Time</span>
                   </div>
                   <div className="booksy-feature">
-                    <span className="feature-icon">✅</span>
+                    <FaCheckCircle className="feature-icon" />
                     <span>Instant Confirmation</span>
                   </div>
                 </div>
@@ -85,19 +93,23 @@ const Booking = () => {
             <h2>Booking Information</h2>
             <div className="info-grid">
               <div className="info-item">
-                <h3>📅 Easy Scheduling</h3>
+                <FaCalendarAlt className="info-icon" />
+                <h3>Easy Scheduling</h3>
                 <p>View real-time availability and book at your convenience, 24/7.</p>
               </div>
               <div className="info-item">
-                <h3>✅ Instant Confirmation</h3>
+                <FaCheckCircle className="info-icon" />
+                <h3>Instant Confirmation</h3>
                 <p>Receive immediate confirmation of your appointment via email and SMS.</p>
               </div>
               <div className="info-item">
-                <h3>🔄 Easy Rescheduling</h3>
+                <FaSyncAlt className="info-icon" />
+                <h3>Easy Rescheduling</h3>
                 <p>Modify or cancel your appointment directly from your confirmation email.</p>
               </div>
               <div className="info-item">
-                <h3>💳 Secure Payment</h3>
+                <FaCreditCard className="info-icon" />
+                <h3>Secure Payment</h3>
                 <p>Pay online or in-person. We accept all major credit cards.</p>
               </div>
             </div>

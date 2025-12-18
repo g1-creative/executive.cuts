@@ -1,4 +1,16 @@
 import { Link } from 'react-router-dom'
+import { 
+  FaScissors, 
+  FaCrown, 
+  FaCut, 
+  FaBarberShop, 
+  FaBolt, 
+  FaChild, 
+  FaUser, 
+  FaRazor,
+  FaClock,
+  FaStar
+} from 'react-icons/fa'
 import BooksyWidget from '../components/BooksyWidget'
 import './Services.css'
 
@@ -10,7 +22,7 @@ const Services = () => {
       price: '$50',
       description: 'Complete grooming experience including haircut, beard trim, hot towel, and styling',
       featured: true,
-      icon: '✂️'
+      Icon: FaScissors
     },
     { 
       name: 'Royal Service', 
@@ -18,27 +30,27 @@ const Services = () => {
       price: '$65',
       description: 'Our premium package with everything you need for the ultimate grooming experience',
       featured: true,
-      icon: '👑'
+      Icon: FaCrown
     },
   ]
 
   const hairServices = [
-    { name: 'Regular Haircut', duration: '30 min', price: '$25', icon: '✂️' },
-    { name: 'Skin Fade', duration: '35 min', price: '$30', icon: '💈' },
-    { name: 'Taper', duration: '30 min', price: '$25', icon: '✂️' },
-    { name: 'Buzz Cut', duration: '20 min', price: '$18', icon: '⚡' },
+    { name: 'Regular Haircut', duration: '30 min', price: '$25', Icon: FaScissors },
+    { name: 'Skin Fade', duration: '35 min', price: '$30', Icon: FaBarberShop },
+    { name: 'Taper', duration: '30 min', price: '$25', Icon: FaCut },
+    { name: 'Buzz Cut', duration: '20 min', price: '$18', Icon: FaBolt },
   ]
 
   const comboServices = [
-    { name: 'Haircut + Beard', duration: '45 min', price: '$35', icon: '✂️' },
-    { name: 'Skin Fade + Beard', duration: '50 min', price: '$40', icon: '💈' },
-    { name: 'Haircut & Eyebrows', duration: '35 min', price: '$30', icon: '✂️' },
+    { name: 'Haircut + Beard', duration: '45 min', price: '$35', Icon: FaScissors },
+    { name: 'Skin Fade + Beard', duration: '50 min', price: '$40', Icon: FaBarberShop },
+    { name: 'Haircut & Eyebrows', duration: '35 min', price: '$30', Icon: FaScissors },
   ]
 
   const specialServices = [
-    { name: 'Kids Haircut', duration: '25 min', price: '$20', icon: '👦' },
-    { name: 'Senior Haircut', duration: '30 min', price: '$22', icon: '👴' },
-    { name: 'Beard Lineup', duration: '20 min', price: '$15', icon: '🪒' },
+    { name: 'Kids Haircut', duration: '25 min', price: '$20', Icon: FaChild },
+    { name: 'Senior Haircut', duration: '30 min', price: '$22', Icon: FaUser },
+    { name: 'Beard Lineup', duration: '20 min', price: '$15', Icon: FaRazor },
   ]
 
   return (
@@ -57,22 +69,27 @@ const Services = () => {
         <div className="container">
           <h2 className="section-title">Signature Packages</h2>
           <div className="featured-services-grid">
-            {featuredServices.map((service, index) => (
-              <div key={index} className="featured-service-card card card-premium">
-                <div className="featured-service-icon">{service.icon}</div>
-                <h3>{service.name}</h3>
-                <p className="featured-service-description">{service.description}</p>
-                <div className="featured-service-details">
-                  <span className="service-duration">
-                    <span className="icon">⏱️</span> {service.duration}
-                  </span>
-                  <span className="service-price-large">{service.price}</span>
+            {featuredServices.map((service, index) => {
+              const IconComponent = service.Icon
+              return (
+                <div key={index} className="featured-service-card card card-premium">
+                  <div className="featured-service-icon">
+                    <IconComponent />
+                  </div>
+                  <h3>{service.name}</h3>
+                  <p className="featured-service-description">{service.description}</p>
+                  <div className="featured-service-details">
+                    <span className="service-duration">
+                      <FaClock className="icon" /> {service.duration}
+                    </span>
+                    <span className="service-price-large">{service.price}</span>
+                  </div>
+                  <Link to="/booking" className="btn btn-accent">
+                    Book This Service
+                  </Link>
                 </div>
-                <Link to="/booking" className="btn btn-accent">
-                  Book This Service
-                </Link>
-              </div>
-            ))}
+              )
+            })}
           </div>
         </div>
       </section>
@@ -81,61 +98,76 @@ const Services = () => {
         <div className="container">
           <div className="service-category">
             <h2 className="category-title">
-              <span className="category-icon">✂️</span>
+              <FaScissors className="category-icon" />
               Haircuts
             </h2>
             <div className="decorative-line"></div>
             <div className="services-grid">
-              {hairServices.map((service, index) => (
-                <div key={index} className="service-card card">
-                  <div className="service-icon-small">{service.icon}</div>
-                  <div className="service-info">
-                    <h3 className="service-name">{service.name}</h3>
-                    <span className="service-duration">{service.duration}</span>
+              {hairServices.map((service, index) => {
+                const IconComponent = service.Icon
+                return (
+                  <div key={index} className="service-card card">
+                    <div className="service-icon-small">
+                      <IconComponent />
+                    </div>
+                    <div className="service-info">
+                      <h3 className="service-name">{service.name}</h3>
+                      <span className="service-duration">{service.duration}</span>
+                    </div>
+                    <div className="service-price">{service.price}</div>
                   </div>
-                  <div className="service-price">{service.price}</div>
-                </div>
-              ))}
+                )
+              })}
             </div>
           </div>
 
           <div className="service-category">
             <h2 className="category-title">
-              <span className="category-icon">💈</span>
+              <FaBarberShop className="category-icon" />
               Combo Services
             </h2>
             <div className="decorative-line"></div>
             <div className="services-grid">
-              {comboServices.map((service, index) => (
-                <div key={index} className="service-card card">
-                  <div className="service-icon-small">{service.icon}</div>
-                  <div className="service-info">
-                    <h3 className="service-name">{service.name}</h3>
-                    <span className="service-duration">{service.duration}</span>
+              {comboServices.map((service, index) => {
+                const IconComponent = service.Icon
+                return (
+                  <div key={index} className="service-card card">
+                    <div className="service-icon-small">
+                      <IconComponent />
+                    </div>
+                    <div className="service-info">
+                      <h3 className="service-name">{service.name}</h3>
+                      <span className="service-duration">{service.duration}</span>
+                    </div>
+                    <div className="service-price">{service.price}</div>
                   </div>
-                  <div className="service-price">{service.price}</div>
-                </div>
-              ))}
+                )
+              })}
             </div>
           </div>
 
           <div className="service-category">
             <h2 className="category-title">
-              <span className="category-icon">⭐</span>
+              <FaStar className="category-icon" />
               Special Services
             </h2>
             <div className="decorative-line"></div>
             <div className="services-grid">
-              {specialServices.map((service, index) => (
-                <div key={index} className="service-card card">
-                  <div className="service-icon-small">{service.icon}</div>
-                  <div className="service-info">
-                    <h3 className="service-name">{service.name}</h3>
-                    <span className="service-duration">{service.duration}</span>
+              {specialServices.map((service, index) => {
+                const IconComponent = service.Icon
+                return (
+                  <div key={index} className="service-card card">
+                    <div className="service-icon-small">
+                      <IconComponent />
+                    </div>
+                    <div className="service-info">
+                      <h3 className="service-name">{service.name}</h3>
+                      <span className="service-duration">{service.duration}</span>
+                    </div>
+                    <div className="service-price">{service.price}</div>
                   </div>
-                  <div className="service-price">{service.price}</div>
-                </div>
-              ))}
+                )
+              })}
             </div>
           </div>
           

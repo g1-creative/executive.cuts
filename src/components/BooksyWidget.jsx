@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { FaCalendarAlt, FaScissors, FaCheckCircle } from 'react-icons/fa'
 import './BooksyWidget.css'
 
 const BooksyWidget = ({ variant = 'inline', className = '' }) => {
@@ -43,15 +44,15 @@ const BooksyWidget = ({ variant = 'inline', className = '' }) => {
           <div className="booksy-preview-content">
             <div className="booksy-features">
               <div className="booksy-feature">
-                <span className="feature-icon">📅</span>
+                <FaCalendarAlt className="feature-icon" />
                 <span>View Available Times</span>
               </div>
               <div className="booksy-feature">
-                <span className="feature-icon">✂️</span>
+                <FaScissors className="feature-icon" />
                 <span>Select Your Service</span>
               </div>
               <div className="booksy-feature">
-                <span className="feature-icon">✅</span>
+                <FaCheckCircle className="feature-icon" />
                 <span>Instant Confirmation</span>
               </div>
             </div>

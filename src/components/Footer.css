@@ -94,6 +94,8 @@
 .social-icon {
   font-weight: 700;
   color: var(--color-secondary);
+  width: 1.25rem;
+  height: 1.25rem;
 }
 
 .footer-heading {
@@ -194,6 +196,15 @@
 .contact-icon {
   font-size: 1.25rem;
   min-width: 24px;
+  display: flex;
+  align-items: center;
+  color: var(--color-accent);
+  flex-shrink: 0;
+}
+
+.contact-icon svg {
+  width: 1.25rem;
+  height: 1.25rem;
 }
 
 .contact-item a {

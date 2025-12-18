@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { FaScissors, FaStar, FaUsers, FaMapMarkerAlt, FaPhone, FaStar as FaStarIcon } from 'react-icons/fa'
 import BooksyWidget from '../components/BooksyWidget'
 import './Home.css'
 
@@ -55,7 +56,7 @@ const Home = () => {
                 href="tel:+12394657270" 
                 className="btn btn-secondary"
               >
-                <span>📞</span> Call Now
+                <FaPhone /> Call Now
               </a>
             </div>
             <div className="hero-stats">
@@ -71,7 +72,9 @@ const Home = () => {
             <div className="image-placeholder">
               <div className="image-placeholder-overlay"></div>
               <div className="placeholder-content">
-                <div className="placeholder-icon">✂️</div>
+                <div className="placeholder-icon">
+                  <FaScissors />
+                </div>
                 <span>Professional Barbershop</span>
                 <p>Add your hero image here</p>
               </div>
@@ -89,7 +92,9 @@ const Home = () => {
           <div className="features-grid">
             <div className="feature-card card">
               <div className="feature-icon-wrapper">
-                <div className="feature-icon">✂️</div>
+                <div className="feature-icon">
+                  <FaScissors />
+                </div>
               </div>
               <h3>Master Barbers</h3>
               <div className="decorative-line"></div>
@@ -97,7 +102,9 @@ const Home = () => {
             </div>
             <div className="feature-card card card-premium">
               <div className="feature-icon-wrapper">
-                <div className="feature-icon">⭐</div>
+                <div className="feature-icon">
+                  <FaStar />
+                </div>
               </div>
               <h3>Premium Service</h3>
               <div className="decorative-line"></div>
@@ -105,7 +112,9 @@ const Home = () => {
             </div>
             <div className="feature-card card">
               <div className="feature-icon-wrapper">
-                <div className="feature-icon">👨‍👩‍👧‍👦</div>
+                <div className="feature-icon">
+                  <FaUsers />
+                </div>
               </div>
               <h3>All Ages Welcome</h3>
               <div className="decorative-line"></div>
@@ -113,7 +122,9 @@ const Home = () => {
             </div>
             <div className="feature-card card">
               <div className="feature-icon-wrapper">
-                <div className="feature-icon">📍</div>
+                <div className="feature-icon">
+                  <FaMapMarkerAlt />
+                </div>
               </div>
               <h3>Prime Location</h3>
               <div className="decorative-line"></div>
@@ -189,7 +200,7 @@ const Home = () => {
               <div key={index} className="testimonial-card card">
                 <div className="testimonial-stars">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <span key={i} className="star">⭐</span>
+                    <FaStarIcon key={i} className="star" />
                   ))}
                 </div>
                 <p className="testimonial-text">"{testimonial.review}"</p>
