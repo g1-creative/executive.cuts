@@ -3,63 +3,162 @@ import BooksyWidget from '../components/BooksyWidget'
 import './Services.css'
 
 const Services = () => {
-  const services = [
-    { name: 'Regular Haircut', duration: '30 min', price: 'Starting at $25' },
-    { name: 'Haircut + Beard', duration: '45 min', price: 'Starting at $35' },
-    { name: 'Skin Fade', duration: '35 min', price: 'Starting at $30' },
-    { name: 'Skin Fade + Beard', duration: '50 min', price: 'Starting at $40' },
-    { name: 'Beard Lineup', duration: '20 min', price: 'Starting at $15' },
-    { name: 'Kids Haircut', duration: '25 min', price: 'Starting at $20' },
-    { name: 'Senior Haircut', duration: '30 min', price: 'Starting at $22' },
-    { name: 'Buzz Cut', duration: '20 min', price: 'Starting at $18' },
-    { name: 'Taper', duration: '30 min', price: 'Starting at $25' },
-    { name: 'Haircut & Eyebrows', duration: '35 min', price: 'Starting at $30' },
-    { name: 'Full Service', duration: '60 min', price: 'Starting at $50' },
-    { name: 'Royal Service', duration: '75 min', price: 'Starting at $65' },
+  const featuredServices = [
+    { 
+      name: 'Full Service', 
+      duration: '60 min', 
+      price: '$50',
+      description: 'Complete grooming experience including haircut, beard trim, hot towel, and styling',
+      featured: true,
+      icon: '✂️'
+    },
+    { 
+      name: 'Royal Service', 
+      duration: '75 min', 
+      price: '$65',
+      description: 'Our premium package with everything you need for the ultimate grooming experience',
+      featured: true,
+      icon: '👑'
+    },
+  ]
+
+  const hairServices = [
+    { name: 'Regular Haircut', duration: '30 min', price: '$25', icon: '✂️' },
+    { name: 'Skin Fade', duration: '35 min', price: '$30', icon: '💈' },
+    { name: 'Taper', duration: '30 min', price: '$25', icon: '✂️' },
+    { name: 'Buzz Cut', duration: '20 min', price: '$18', icon: '⚡' },
+  ]
+
+  const comboServices = [
+    { name: 'Haircut + Beard', duration: '45 min', price: '$35', icon: '✂️' },
+    { name: 'Skin Fade + Beard', duration: '50 min', price: '$40', icon: '💈' },
+    { name: 'Haircut & Eyebrows', duration: '35 min', price: '$30', icon: '✂️' },
+  ]
+
+  const specialServices = [
+    { name: 'Kids Haircut', duration: '25 min', price: '$20', icon: '👦' },
+    { name: 'Senior Haircut', duration: '30 min', price: '$22', icon: '👴' },
+    { name: 'Beard Lineup', duration: '20 min', price: '$15', icon: '🪒' },
   ]
 
   return (
     <div className="services-page">
-      <section className="services-hero section">
+      <section className="services-hero section pattern-bg">
         <div className="container">
-          <h1 className="section-title">Our Services</h1>
-          <p className="services-intro">
-            We offer a wide range of professional barbershop services to meet all your grooming needs. 
-            From classic cuts to modern fades, our experienced barbers deliver precision and style.
+          <span className="accent-badge">Premium Services</span>
+          <h1 className="section-title">Expert Grooming Services</h1>
+          <p className="section-subtitle">
+            From classic cuts to modern fades, our master barbers deliver precision, style, and exceptional service every time
           </p>
+        </div>
+      </section>
+
+      <section className="featured-services section">
+        <div className="container">
+          <h2 className="section-title">Signature Packages</h2>
+          <div className="featured-services-grid">
+            {featuredServices.map((service, index) => (
+              <div key={index} className="featured-service-card card card-premium">
+                <div className="featured-service-icon">{service.icon}</div>
+                <h3>{service.name}</h3>
+                <p className="featured-service-description">{service.description}</p>
+                <div className="featured-service-details">
+                  <span className="service-duration">
+                    <span className="icon">⏱️</span> {service.duration}
+                  </span>
+                  <span className="service-price-large">{service.price}</span>
+                </div>
+                <Link to="/booking" className="btn btn-accent">
+                  Book This Service
+                </Link>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       <section className="services-list section">
         <div className="container">
-          <div className="services-grid">
-            {services.map((service, index) => (
-              <div key={index} className="service-card">
-                <div className="service-header">
-                  <h3 className="service-name">{service.name}</h3>
-                  <span className="service-duration">{service.duration}</span>
+          <div className="service-category">
+            <h2 className="category-title">
+              <span className="category-icon">✂️</span>
+              Haircuts
+            </h2>
+            <div className="decorative-line"></div>
+            <div className="services-grid">
+              {hairServices.map((service, index) => (
+                <div key={index} className="service-card card">
+                  <div className="service-icon-small">{service.icon}</div>
+                  <div className="service-info">
+                    <h3 className="service-name">{service.name}</h3>
+                    <span className="service-duration">{service.duration}</span>
+                  </div>
+                  <div className="service-price">{service.price}</div>
                 </div>
-                <p className="service-price">{service.price}</p>
-              </div>
-            ))}
+              ))}
+            </div>
+          </div>
+
+          <div className="service-category">
+            <h2 className="category-title">
+              <span className="category-icon">💈</span>
+              Combo Services
+            </h2>
+            <div className="decorative-line"></div>
+            <div className="services-grid">
+              {comboServices.map((service, index) => (
+                <div key={index} className="service-card card">
+                  <div className="service-icon-small">{service.icon}</div>
+                  <div className="service-info">
+                    <h3 className="service-name">{service.name}</h3>
+                    <span className="service-duration">{service.duration}</span>
+                  </div>
+                  <div className="service-price">{service.price}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="service-category">
+            <h2 className="category-title">
+              <span className="category-icon">⭐</span>
+              Special Services
+            </h2>
+            <div className="decorative-line"></div>
+            <div className="services-grid">
+              {specialServices.map((service, index) => (
+                <div key={index} className="service-card card">
+                  <div className="service-icon-small">{service.icon}</div>
+                  <div className="service-info">
+                    <h3 className="service-name">{service.name}</h3>
+                    <span className="service-duration">{service.duration}</span>
+                  </div>
+                  <div className="service-price">{service.price}</div>
+                </div>
+              ))}
+            </div>
           </div>
           
           <div className="services-cta">
-            <Link 
-              to="/booking"
-              className="btn btn-primary"
-            >
-              Book Now
-            </Link>
+            <div className="cta-box">
+              <h3>Ready to Get Started?</h3>
+              <p>Book your appointment today and experience the LDB Cuts difference</p>
+              <Link 
+                to="/booking"
+                className="btn btn-accent"
+              >
+                Book Your Service Now
+              </Link>
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="services-booking section">
+      <section className="services-booking section pattern-bg">
         <div className="container">
-          <h2 className="section-title">Ready to Book?</h2>
-          <p className="services-booking-intro">
-            View all available services, select your preferred time, and book your appointment directly below.
+          <h2 className="section-title">Book Your Appointment</h2>
+          <p className="section-subtitle">
+            Select your preferred service, choose an available time slot, and book instantly
           </p>
           <div className="services-booking-widget">
             <BooksyWidget variant="inline" />

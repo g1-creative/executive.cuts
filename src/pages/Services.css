@@ -1,112 +1,290 @@
+/* Services Hero */
 .services-hero {
-  background: linear-gradient(135deg, var(--color-bg-light) 0%, var(--color-secondary) 100%);
   text-align: center;
+  background: linear-gradient(135deg, var(--color-bg-light) 0%, var(--color-secondary) 100%);
 }
 
-.services-intro {
-  max-width: 700px;
-  margin: 0 auto;
-  font-size: 1.125rem;
+.services-hero .accent-badge {
+  margin-bottom: var(--spacing-md);
+}
+
+/* Featured Services */
+.featured-services {
+  background-color: var(--color-secondary);
+}
+
+.featured-services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: var(--spacing-xl);
+}
+
+.featured-service-card {
+  text-align: center;
+  padding: var(--spacing-2xl);
+  position: relative;
+}
+
+.featured-service-icon {
+  font-size: 4rem;
+  margin-bottom: var(--spacing-lg);
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.featured-service-card h3 {
+  font-size: 1.75rem;
+  margin-bottom: var(--spacing-md);
+}
+
+.featured-service-description {
   color: var(--color-text-light);
   line-height: 1.8;
+  margin-bottom: var(--spacing-xl);
+  font-size: 1.05rem;
 }
 
+.featured-service-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-lg) 0;
+  margin-bottom: var(--spacing-lg);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.service-duration {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-text-light);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.service-duration .icon {
+  font-size: 1.1rem;
+}
+
+.service-price-large {
+  font-size: 2.5rem;
+  font-weight: 700;
+  font-family: var(--font-heading);
+  color: var(--color-accent);
+  line-height: 1;
+}
+
+.featured-service-card .btn {
+  width: 100%;
+}
+
+/* Services List */
 .services-list {
-  background-color: var(--color-secondary);
+  background: linear-gradient(to bottom, var(--color-bg-light), var(--color-secondary));
+}
+
+.service-category {
+  margin-bottom: var(--spacing-3xl);
+}
+
+.service-category:last-of-type {
+  margin-bottom: 0;
+}
+
+.category-title {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  justify-content: center;
+  font-size: 2rem;
+  margin-bottom: var(--spacing-md);
+  color: var(--color-primary);
+}
+
+.category-icon {
+  font-size: 2.5rem;
 }
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: var(--spacing-lg);
-  margin-bottom: var(--spacing-2xl);
-}
-
-.service-card {
-  background-color: var(--color-bg-light);
-  padding: var(--spacing-lg);
-  border-radius: var(--border-radius);
-  box-shadow: var(--shadow-sm);
-  transition: var(--transition);
-  border: 1px solid var(--color-border);
-}
-
-.service-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-md);
-  border-color: var(--color-primary);
-}
-
-.service-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: var(--spacing-sm);
-  gap: var(--spacing-sm);
-}
-
-.service-name {
-  font-size: 1.25rem;
-  margin-bottom: 0;
-  flex: 1;
-}
-
-.service-duration {
-  font-size: 0.875rem;
-  color: var(--color-text-light);
-  background-color: var(--color-secondary);
-  padding: var(--spacing-xs) var(--spacing-sm);
-  border-radius: var(--border-radius);
-  white-space: nowrap;
-  font-weight: 500;
-}
-
-.service-price {
-  font-size: 1.125rem;
-  font-weight: 600;
-  color: var(--color-primary);
-  margin: 0;
-}
-
-.services-cta {
-  text-align: center;
   margin-top: var(--spacing-xl);
 }
 
-.services-cta .btn {
-  font-size: 1.125rem;
-  padding: var(--spacing-md) var(--spacing-xl);
+.service-card {
+  padding: var(--spacing-xl);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  position: relative;
 }
 
+.service-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(to bottom, var(--color-accent), var(--color-accent-dark));
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.service-card:hover::before {
+  opacity: 1;
+}
+
+.service-icon-small {
+  font-size: 2rem;
+  min-width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, var(--color-accent-light), var(--color-accent));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-info {
+  flex: 1;
+}
+
+.service-name {
+  font-size: 1.125rem;
+  margin-bottom: 0.25rem;
+}
+
+.service-info .service-duration {
+  font-size: 0.875rem;
+  color: var(--color-text-lighter);
+}
+
+.service-price {
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-family: var(--font-heading);
+  color: var(--color-accent);
+  min-width: 80px;
+  text-align: right;
+}
+
+/* Services CTA */
+.services-cta {
+  margin-top: var(--spacing-3xl);
+  text-align: center;
+}
+
+.cta-box {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+  color: var(--color-secondary);
+  padding: var(--spacing-3xl);
+  border-radius: var(--border-radius-xl);
+  box-shadow: var(--shadow-xl);
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-box::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(201, 165, 90, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.cta-box h3 {
+  color: var(--color-secondary);
+  font-size: 2rem;
+  margin-bottom: var(--spacing-md);
+  position: relative;
+  z-index: 1;
+}
+
+.cta-box p {
+  font-size: 1.125rem;
+  margin-bottom: var(--spacing-xl);
+  opacity: 0.9;
+  position: relative;
+  z-index: 1;
+}
+
+.cta-box .btn {
+  min-width: 280px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Services Booking */
 .services-booking {
   background-color: var(--color-bg-light);
 }
 
-.services-booking-intro {
-  text-align: center;
-  max-width: 700px;
-  margin: 0 auto var(--spacing-xl);
-  font-size: 1.125rem;
-  color: var(--color-text-light);
-  line-height: 1.8;
-}
-
 .services-booking-widget {
-  margin-top: var(--spacing-lg);
+  margin-top: var(--spacing-xl);
 }
 
+/* Responsive Design */
 @media (max-width: 767px) {
+  .featured-services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-price-large {
+    font-size: 2rem;
+  }
+
   .services-grid {
     grid-template-columns: 1fr;
   }
 
-  .service-header {
+  .service-card {
     flex-direction: column;
-    align-items: flex-start;
+    text-align: center;
   }
 
-  .service-duration {
-    align-self: flex-start;
+  .service-info {
+    text-align: center;
+  }
+
+  .service-price {
+    text-align: center;
+    min-width: auto;
+  }
+
+  .category-title {
+    font-size: 1.5rem;
+  }
+
+  .category-icon {
+    font-size: 2rem;
+  }
+
+  .cta-box {
+    padding: var(--spacing-2xl) var(--spacing-lg);
+  }
+
+  .cta-box h3 {
+    font-size: 1.5rem;
+  }
+
+  .cta-box .btn {
+    width: 100%;
+    min-width: auto;
   }
 }
-
