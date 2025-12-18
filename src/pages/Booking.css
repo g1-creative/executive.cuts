@@ -142,20 +142,72 @@
 }
 
 @media (max-width: 767px) {
+  .booking-hero {
+    padding: var(--spacing-lg) 0;
+  }
+
+  .booking-intro {
+    font-size: 0.95rem;
+    padding: 0 var(--spacing-sm);
+  }
+
   .booksy-widget-preview {
     padding: var(--spacing-lg);
+  }
+
+  .booksy-preview-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .booksy-preview-header p {
+    font-size: 0.95rem;
   }
 
   .booksy-features {
     grid-template-columns: 1fr;
     gap: var(--spacing-md);
+    width: 100%;
+  }
+
+  .booksy-feature {
+    min-width: auto;
+    padding: var(--spacing-sm);
+  }
+
+  .booksy-feature .feature-icon {
+    font-size: 2rem;
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .booksy-feature .feature-icon svg {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .booksy-feature span:not(.feature-icon) {
+    font-size: 0.85rem;
   }
 
   .booksy-open-button {
     width: 100%;
     min-width: auto;
+    min-height: 52px;
     padding: var(--spacing-md);
-    font-size: 1.25rem;
+    font-size: 1.1rem;
+  }
+
+  .booksy-note {
+    font-size: 0.8rem;
+  }
+
+  .booking-info {
+    margin-top: var(--spacing-xl);
+    padding-top: var(--spacing-xl);
+  }
+
+  .booking-info h2 {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-lg);
   }
 }
 
@@ -210,16 +262,50 @@
 
 @media (max-width: 767px) {
   .booksy-widget-container {
-    min-height: 600px;
+    min-height: 500px;
     padding: var(--spacing-sm);
   }
   
   .booksy-widget iframe {
-    min-height: 600px;
+    min-height: 500px;
   }
   
   .info-grid {
     grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+
+  .info-item {
+    padding: var(--spacing-md);
+  }
+
+  .info-item .info-icon {
+    font-size: 2rem;
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .info-item .info-icon svg {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .info-item h3 {
+    font-size: 1rem;
+  }
+
+  .info-item p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .booksy-widget-preview {
+    padding: var(--spacing-md);
+  }
+
+  .booksy-open-button {
+    font-size: 1rem;
+    padding: 0.875rem;
   }
 }
 

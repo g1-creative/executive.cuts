@@ -1,11 +1,17 @@
 .mobile-sticky-btn {
   position: fixed;
-  bottom: var(--spacing-md);
-  left: var(--spacing-md);
-  right: var(--spacing-md);
+  bottom: var(--spacing-sm);
+  left: var(--spacing-sm);
+  right: var(--spacing-sm);
   z-index: 1000;
   display: none;
   animation: slideUp 0.3s ease;
+  pointer-events: none;
+}
+
+.mobile-sticky-btn .btn {
+  pointer-events: all;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 @keyframes slideUp {

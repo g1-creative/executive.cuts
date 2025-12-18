@@ -120,6 +120,7 @@
 @media (max-width: 967px) {
   .contact-grid {
     grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
   }
 
   .contact-map {
@@ -133,8 +134,69 @@
 }
 
 @media (max-width: 767px) {
+  .contact-hero {
+    padding: var(--spacing-lg) 0;
+  }
+
+  .contact-intro {
+    font-size: 0.95rem;
+    padding: 0 var(--spacing-sm);
+  }
+
+  .contact-info h2 {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .contact-item {
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-md);
+  }
+
+  .contact-item h3 {
+    font-size: 1rem;
+  }
+
+  .contact-link {
+    font-size: 1rem;
+    word-break: break-word;
+  }
+
+  .hours p {
+    font-size: 0.9rem;
+  }
+
+  .hours-note {
+    font-size: 0.8rem;
+  }
+
+  .contact-cta {
+    margin-top: var(--spacing-lg);
+  }
+
+  .contact-cta .btn {
+    width: 100%;
+    min-height: 48px;
+  }
+
   .map-container {
     height: 300px;
+    border-radius: var(--border-radius-lg);
+  }
+
+  .map-note {
+    font-size: 0.8rem;
+    margin-top: var(--spacing-sm);
+  }
+}
+
+@media (max-width: 480px) {
+  .map-container {
+    height: 250px;
+  }
+
+  .contact-item {
+    margin-bottom: var(--spacing-md);
   }
 }
 

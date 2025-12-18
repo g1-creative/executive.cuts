@@ -99,6 +99,7 @@
 @media (max-width: 967px) {
   .about-grid {
     grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
   }
 
   .about-image {
@@ -108,8 +109,66 @@
 }
 
 @media (max-width: 767px) {
+  .about-hero {
+    padding: var(--spacing-lg) 0;
+  }
+
+  .about-grid {
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .about-text h2 {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .about-text p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .about-image {
+    height: 300px;
+    border-radius: var(--border-radius-lg);
+  }
+
+  .about-values {
+    margin-top: var(--spacing-xl);
+    padding-top: var(--spacing-xl);
+  }
+
+  .about-values h2 {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-lg);
+  }
+
   .values-grid {
     grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+
+  .value-item {
+    padding: var(--spacing-md);
+  }
+
+  .value-item h3 {
+    font-size: 1.1rem;
+  }
+
+  .value-item p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-image {
+    height: 250px;
+  }
+
+  .about-text h2 {
+    font-size: 1.25rem;
   }
 }
 

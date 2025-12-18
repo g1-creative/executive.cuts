@@ -18,18 +18,26 @@ const Header = () => {
   const isActive = (path) => location.pathname === path
 
   return (
-    <header className="header">
-      <div className="container">
-        <div className="header-content">
-          <Link to="/" className="logo" onClick={closeMenu}>
-            <img src={logoImage} alt="LDB Cuts Barbershop" className="logo-image" />
-            <div className="logo-text-container">
-              <span className="logo-text">LDB Cuts</span>
-              <span className="logo-subtitle">Barbershop</span>
-            </div>
-          </Link>
-          
-          <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
+    <>
+      {isMenuOpen && (
+        <div 
+          className="nav-overlay"
+          onClick={closeMenu}
+          aria-hidden="true"
+        />
+      )}
+      <header className="header">
+        <div className="container">
+          <div className="header-content">
+            <Link to="/" className="logo" onClick={closeMenu}>
+              <img src={logoImage} alt="LDB Cuts Barbershop" className="logo-image" />
+              <div className="logo-text-container">
+                <span className="logo-text">LDB Cuts</span>
+                <span className="logo-subtitle">Barbershop</span>
+              </div>
+            </Link>
+            
+            <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
             <Link 
               to="/" 
               className={`nav-link ${isActive('/') ? 'active' : ''}`}
@@ -87,6 +95,7 @@ const Header = () => {
         </div>
       </div>
     </header>
+    </>
   )
 }
 

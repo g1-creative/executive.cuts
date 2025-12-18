@@ -53,6 +53,17 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+* {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+*:focus {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
 }
 
 body {
@@ -64,6 +75,15 @@ body {
   background-color: var(--color-secondary);
   font-weight: 400;
   overflow-x: hidden;
+  /* Prevent pull-to-refresh on mobile */
+  overscroll-behavior-y: contain;
+}
+
+/* Add bottom padding for mobile sticky button */
+@media (max-width: 767px) {
+  body {
+    padding-bottom: 80px;
+  }
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -117,7 +137,7 @@ button {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 var(--spacing-md);
+  padding: 0 var(--spacing-sm);
 }
 
 @media (min-width: 768px) {
@@ -127,7 +147,9 @@ button {
 }
 
 .btn {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: 1rem 2rem;
   border-radius: var(--border-radius);
   font-weight: 600;
@@ -141,6 +163,9 @@ button {
   letter-spacing: 0.05em;
   position: relative;
   overflow: hidden;
+  min-height: 44px;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 
 .btn::before {
@@ -454,26 +479,121 @@ button {
   }
 }
 
+/* Mobile Optimizations */
 @media (max-width: 767px) {
+  /* Container padding */
+  .container {
+    padding: 0 var(--spacing-sm);
+  }
+
+  /* Typography */
+  body {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  h1 {
+    font-size: clamp(1.75rem, 8vw, 2.5rem);
+    line-height: 1.2;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  h2 {
+    font-size: clamp(1.5rem, 6vw, 2rem);
+    line-height: 1.3;
+  }
+
+  h3 {
+    font-size: clamp(1.25rem, 5vw, 1.5rem);
+  }
+
+  .section-subtitle {
+    font-size: 1rem;
+    padding: 0 var(--spacing-sm);
+  }
+
+  /* Buttons */
+  .btn {
+    padding: 0.875rem 1.5rem;
+    font-size: 0.9rem;
+    min-height: 48px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .btn svg {
+    width: 1.1rem;
+    height: 1.1rem;
+  }
+
+  /* Sections */
+  .section {
+    padding: var(--spacing-xl) 0;
+  }
+
+  .section-title {
+    margin-bottom: var(--spacing-lg);
+    padding: 0 var(--spacing-sm);
+  }
+
+  .section-title::after {
+    width: 60px;
+    height: 2px;
+  }
+
+  /* Mobile sticky button */
   .mobile-sticky-btn {
     display: block;
+    bottom: var(--spacing-sm);
+    left: var(--spacing-sm);
+    right: var(--spacing-sm);
   }
   
   .mobile-sticky-btn .btn {
     width: 100%;
-    padding: var(--spacing-md);
+    padding: 1rem;
     font-size: 1rem;
+    min-height: 52px;
+    box-shadow: var(--shadow-lg);
   }
-  
-  .section {
-    padding: var(--spacing-2xl) 0;
+
+  /* Cards */
+  .card {
+    padding: var(--spacing-lg);
+  }
+
+  /* Prevent horizontal scroll */
+  * {
+    max-width: 100%;
+  }
+
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
   }
 }
 
-/* Responsive Typography */
-@media (max-width: 767px) {
-  body {
-    font-size: 0.95rem;
+/* Small mobile devices */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 var(--spacing-xs);
+  }
+
+  .section {
+    padding: var(--spacing-lg) 0;
+  }
+
+  h1 {
+    font-size: 1.75rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .btn {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.85rem;
   }
 }
 

@@ -271,48 +271,122 @@
 @media (max-width: 767px) {
   .featured-services-grid {
     grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+
+  .featured-service-card {
+    padding: var(--spacing-lg);
+  }
+
+  .featured-service-icon {
+    font-size: 3rem;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .featured-service-icon svg {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .featured-service-card h3 {
+    font-size: 1.5rem;
+  }
+
+  .featured-service-description {
+    font-size: 0.95rem;
   }
 
   .service-price-large {
-    font-size: 2rem;
+    font-size: 1.75rem;
+  }
+
+  .service-category {
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .category-title {
+    font-size: 1.5rem;
+    gap: var(--spacing-sm);
+  }
+
+  .category-icon {
+    font-size: 1.75rem;
+  }
+
+  .category-icon svg {
+    width: 1.75rem;
+    height: 1.75rem;
   }
 
   .services-grid {
     grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
   }
 
   .service-card {
     flex-direction: column;
     text-align: center;
+    padding: var(--spacing-lg);
+    gap: var(--spacing-md);
+  }
+
+  .service-icon-small {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto;
+  }
+
+  .service-icon-small svg {
+    width: 1.75rem;
+    height: 1.75rem;
   }
 
   .service-info {
     text-align: center;
   }
 
+  .service-name {
+    font-size: 1.05rem;
+  }
+
   .service-price {
     text-align: center;
     min-width: auto;
-  }
-
-  .category-title {
-    font-size: 1.5rem;
-  }
-
-  .category-icon {
-    font-size: 2rem;
+    font-size: 1.25rem;
   }
 
   .cta-box {
-    padding: var(--spacing-2xl) var(--spacing-lg);
+    padding: var(--spacing-xl) var(--spacing-md);
   }
 
   .cta-box h3 {
     font-size: 1.5rem;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .cta-box p {
+    font-size: 1rem;
+    margin-bottom: var(--spacing-lg);
   }
 
   .cta-box .btn {
     width: 100%;
     min-width: auto;
+    min-height: 48px;
+  }
+}
+
+@media (max-width: 480px) {
+  .featured-service-card {
+    padding: var(--spacing-md);
+  }
+
+  .service-card {
+    padding: var(--spacing-md);
+  }
+
+  .cta-box {
+    padding: var(--spacing-lg) var(--spacing-sm);
   }
 }
