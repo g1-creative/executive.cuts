@@ -5,20 +5,23 @@
 }
 
 :root {
-  /* Premium Barbershop Color Palette */
-  --color-primary: #0a0a0a;
-  --color-primary-light: #1a1a1a;
+  /* Premium Barbershop Color Palette - Enhanced */
+  --color-primary: #0d0d0d;
+  --color-primary-light: #1f1f1f;
   --color-secondary: #ffffff;
-  --color-accent: #c9a55a;
-  --color-accent-dark: #a88840;
-  --color-accent-light: #e6d5a8;
-  --color-text: #2a2a2a;
-  --color-text-light: #6b6b6b;
-  --color-text-lighter: #999999;
-  --color-border: #e0e0e0;
-  --color-bg-light: #fafafa;
-  --color-bg-dark: #f5f5f5;
-  --color-bg-darker: #151515;
+  --color-accent: #d4af37;
+  --color-accent-dark: #b8941f;
+  --color-accent-light: #f4e4a6;
+  --color-accent-gold: #ffd700;
+  --color-text: #1a1a1a;
+  --color-text-light: #5a5a5a;
+  --color-text-lighter: #8a8a8a;
+  --color-border: #d4d4d4;
+  --color-bg-light: #f8f8f8;
+  --color-bg-dark: #f0f0f0;
+  --color-bg-darker: #1a1a1a;
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
   
   /* Spacing */
   --spacing-xs: 0.5rem;
@@ -212,14 +215,31 @@ button {
 }
 
 .btn-accent {
-  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-dark) 100%);
+  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-gold) 50%, var(--color-accent-dark) 100%);
   color: var(--color-primary);
   font-weight: 700;
-  box-shadow: var(--shadow-accent);
+  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.4), 0 8px 32px rgba(212, 175, 55, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-accent::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s;
+}
+
+.btn-accent:hover::after {
+  left: 100%;
 }
 
 .btn-accent:hover {
-  box-shadow: var(--shadow-xl);
+  box-shadow: 0 6px 30px rgba(212, 175, 55, 0.5), 0 12px 40px rgba(212, 175, 55, 0.3);
   transform: translateY(-3px) scale(1.02);
 }
 
@@ -242,9 +262,11 @@ button {
   bottom: -1rem;
   left: 50%;
   transform: translateX(-50%);
-  width: 80px;
-  height: 3px;
-  background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, var(--color-accent) 20%, var(--color-accent-gold) 50%, var(--color-accent) 80%, transparent);
+  border-radius: 2px;
+  box-shadow: 0 2px 6px rgba(212, 175, 55, 0.4);
 }
 
 .section-subtitle {
@@ -272,22 +294,26 @@ button {
 
 /* Decorative Elements */
 .decorative-line {
-  width: 60px;
-  height: 3px;
-  background: linear-gradient(90deg, var(--color-accent), var(--color-accent-dark));
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, var(--color-accent) 20%, var(--color-accent-gold) 50%, var(--color-accent) 80%, transparent);
   margin: var(--spacing-md) auto;
+  border-radius: 2px;
+  box-shadow: 0 2px 4px rgba(212, 175, 55, 0.3);
 }
 
 .accent-badge {
   display: inline-block;
-  padding: 0.25rem 0.75rem;
-  background: linear-gradient(135deg, var(--color-accent-light), var(--color-accent));
+  padding: 0.35rem 1rem;
+  background: linear-gradient(135deg, var(--color-accent-light) 0%, var(--color-accent) 50%, var(--color-accent-gold) 100%);
   color: var(--color-primary);
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   border-radius: 2rem;
+  box-shadow: 0 2px 8px rgba(212, 175, 55, 0.3);
+  border: 1px solid rgba(212, 175, 55, 0.2);
 }
 
 /* Animations */

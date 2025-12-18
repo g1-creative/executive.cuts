@@ -34,16 +34,16 @@ const Services = () => {
   ]
 
   const hairServices = [
-    { name: 'Regular Haircut', duration: '30 min', price: '$25', Icon: FaScissors },
+    { name: 'Regular Haircut', duration: '30 min', price: '$25', Icon: FaCut },
     { name: 'Skin Fade', duration: '35 min', price: '$30', Icon: FaStore },
     { name: 'Taper', duration: '30 min', price: '$25', Icon: FaCut },
     { name: 'Buzz Cut', duration: '20 min', price: '$18', Icon: FaBolt },
   ]
 
   const comboServices = [
-    { name: 'Haircut + Beard', duration: '45 min', price: '$35', Icon: FaScissors },
+    { name: 'Haircut + Beard', duration: '45 min', price: '$35', Icon: FaCut },
     { name: 'Skin Fade + Beard', duration: '50 min', price: '$40', Icon: FaStore },
-    { name: 'Haircut & Eyebrows', duration: '35 min', price: '$30', Icon: FaScissors },
+    { name: 'Haircut & Eyebrows', duration: '35 min', price: '$30', Icon: FaCut },
   ]
 
   const specialServices = [
@@ -72,20 +72,33 @@ const Services = () => {
               const IconComponent = service.Icon
               return (
                 <div key={index} className="featured-service-card card card-premium">
-                  <div className="featured-service-icon">
-                    <IconComponent />
+                  <div className="featured-service-content">
+                    <div className="featured-service-image">
+                      <div className="image-placeholder">
+                        <div className="image-placeholder-overlay"></div>
+                        <div className="placeholder-content">
+                          <IconComponent className="placeholder-service-icon" />
+                          <span>{service.name}</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="featured-service-info">
+                      <div className="featured-service-icon">
+                        <IconComponent />
+                      </div>
+                      <h3>{service.name}</h3>
+                      <p className="featured-service-description">{service.description}</p>
+                      <div className="featured-service-details">
+                        <span className="service-duration">
+                          <FaClock className="icon" /> {service.duration}
+                        </span>
+                        <span className="service-price-large">{service.price}</span>
+                      </div>
+                      <Link to="/booking" className="btn btn-accent">
+                        Book This Service
+                      </Link>
+                    </div>
                   </div>
-                  <h3>{service.name}</h3>
-                  <p className="featured-service-description">{service.description}</p>
-                  <div className="featured-service-details">
-                    <span className="service-duration">
-                      <FaClock className="icon" /> {service.duration}
-                    </span>
-                    <span className="service-price-large">{service.price}</span>
-                  </div>
-                  <Link to="/booking" className="btn btn-accent">
-                    Book This Service
-                  </Link>
                 </div>
               )
             })}

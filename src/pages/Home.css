@@ -92,7 +92,10 @@
   font-family: var(--font-heading);
   font-size: 2.5rem;
   font-weight: 700;
-  color: var(--color-accent);
+  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-gold) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   margin-bottom: 0.25rem;
   line-height: 1;
 }
@@ -184,12 +187,14 @@
   width: 80px;
   height: 80px;
   margin: 0 auto var(--spacing-lg);
-  background: linear-gradient(135deg, var(--color-accent-light), var(--color-accent));
+  background: linear-gradient(135deg, var(--color-accent-light) 0%, var(--color-accent) 50%, var(--color-accent-gold) 100%);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
+  box-shadow: 0 4px 16px rgba(212, 175, 55, 0.3);
+  border: 2px solid rgba(212, 175, 55, 0.2);
 }
 
 .feature-icon-wrapper::before {
@@ -197,8 +202,20 @@
   position: absolute;
   inset: -4px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-dark));
-  opacity: 0.1;
+  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-gold), var(--color-accent));
+  opacity: 0.15;
+  animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.15;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.25;
+    transform: scale(1.05);
+  }
 }
 
 .feature-icon {
@@ -276,11 +293,13 @@
 .service-price {
   display: inline-block;
   padding: 0.5rem 1rem;
-  background: linear-gradient(135deg, var(--color-accent-light), var(--color-accent));
+  background: linear-gradient(135deg, var(--color-accent-light) 0%, var(--color-accent) 50%, var(--color-accent-gold) 100%);
   color: var(--color-primary);
   font-weight: 700;
   border-radius: var(--border-radius);
   font-size: 0.95rem;
+  box-shadow: 0 2px 8px rgba(212, 175, 55, 0.3);
+  border: 1px solid rgba(212, 175, 55, 0.2);
 }
 
 .services-preview-cta {
