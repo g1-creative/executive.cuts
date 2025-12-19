@@ -8,10 +8,6 @@
   top: 0;
   height: 100vh;
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(135deg, var(--color-bg-light) 0%, var(--color-secondary) 100%);
 }
 
 .zoom-parallax-item {
@@ -25,7 +21,7 @@
 }
 
 .zoom-parallax-image {
-  position: absolute;
+  position: relative;
   height: 25vh;
   width: 25vw;
 }
@@ -38,13 +34,9 @@
   box-shadow: var(--shadow-lg);
 }
 
-/* Individual image positioning */
-/* All images positioned relative to center */
+/* Individual image positioning - matching reference implementation */
 .zoom-parallax-image-0 {
-  top: -20vh;
-  left: -15vw;
-  height: 30vh;
-  width: 25vw;
+  /* Default center position */
 }
 
 .zoom-parallax-image-1 {
@@ -61,17 +53,10 @@
   width: 20vw;
 }
 
-/* Middle image (index 3) - CENTERED and will be the focal point */
 .zoom-parallax-image-3 {
-  top: 50%;
-  left: 50%;
-  height: 40vh;
-  width: 40vw;
-  z-index: 10;
-}
-
-.zoom-parallax-center {
-  transform-origin: center center;
+  left: 27.5vw;
+  height: 25vh;
+  width: 25vw;
 }
 
 .zoom-parallax-image-4 {
@@ -121,12 +106,9 @@
   }
 
   .zoom-parallax-image-3 {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: 35vh;
-    width: 35vw;
-    z-index: 10;
+    left: 25vw;
+    height: 20vh;
+    width: 30vw;
   }
 
   .zoom-parallax-image-4 {
@@ -176,12 +158,9 @@
   }
 
   .zoom-parallax-image-3 {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: 30vh;
-    width: 40vw;
-    z-index: 10;
+    left: 20vw;
+    height: 15vh;
+    width: 35vw;
   }
 
   .zoom-parallax-image-4 {
