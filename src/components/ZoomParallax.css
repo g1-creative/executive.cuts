@@ -3,6 +3,13 @@
   height: 200vh;
 }
 
+/* Hide zoom parallax on mobile */
+@media (max-width: 767px) {
+  .zoom-parallax-container {
+    display: none;
+  }
+}
+
 .zoom-parallax-sticky {
   position: sticky;
   top: 0;

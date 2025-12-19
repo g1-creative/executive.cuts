@@ -48,7 +48,7 @@ const Gallery = () => {
         </div>
       </section>
 
-      {/* Zoom Parallax Section */}
+      {/* Zoom Parallax Section - Desktop Only */}
       <section className="gallery-parallax-section">
         <div className="gallery-parallax-intro">
           <h2 className="section-title">Our Work in Motion</h2>
@@ -59,13 +59,31 @@ const Gallery = () => {
         <ZoomParallax images={parallaxImages} />
       </section>
 
-      {/* Traditional Gallery Grid */}
+      {/* Enhanced Gallery Grid */}
       <section className="gallery-content section">
         <div className="container">
-          <h2 className="section-title">More of Our Work</h2>
+          <h2 className="section-title">Our Work</h2>
+          <p className="section-subtitle">
+            Each cut is crafted with precision and attention to detail
+          </p>
           <div className="gallery-grid">
+            {/* Show parallax images on mobile, mix with placeholders on desktop */}
+            {parallaxImages.map((image, index) => (
+              <div key={`parallax-${index}`} className="gallery-item gallery-item-image">
+                <img 
+                  src={image.src} 
+                  alt={image.alt}
+                  className="gallery-img"
+                  loading="lazy"
+                />
+                <div className="gallery-item-overlay">
+                  <span className="gallery-item-label">{image.alt}</span>
+                </div>
+              </div>
+            ))}
+            {/* Additional placeholder images */}
             {Array.from({ length: imageCount }, (_, index) => (
-              <div key={index} className="gallery-item">
+              <div key={`placeholder-${index}`} className="gallery-item">
                 <div className="image-placeholder">
                   <span>Image {index + 1}</span>
                   <p>Add haircut photo here</p>
