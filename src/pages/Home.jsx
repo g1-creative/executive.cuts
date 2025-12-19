@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom'
+import { useEffect, useRef } from 'react'
 import { FaCut, FaStar, FaUsers, FaMapMarkerAlt, FaPhone, FaStar as FaStarIcon } from 'react-icons/fa'
 import BooksyWidget from '../components/BooksyWidget'
+import { useScrollAnimation } from '../hooks/useScrollAnimation'
 import './Home.css'
 
 const Home = () => {
@@ -28,6 +30,51 @@ const Home = () => {
       rating: 5,
     },
   ]
+
+  // Scroll animations for testimonials, features, and services
+  const testimonialRefs = useRef([])
+  const featureRefs = useRef([])
+  const serviceRefs = useRef([])
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry, index) => {
+          if (entry.isIntersecting) {
+            setTimeout(() => {
+              entry.target.classList.add('visible')
+            }, index * 150)
+            observer.unobserve(entry.target)
+          }
+        })
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+    )
+
+    testimonialRefs.current.forEach((ref) => {
+      if (ref) observer.observe(ref)
+    })
+
+    featureRefs.current.forEach((ref) => {
+      if (ref) observer.observe(ref)
+    })
+
+    serviceRefs.current.forEach((ref) => {
+      if (ref) observer.observe(ref)
+    })
+
+    return () => {
+      testimonialRefs.current.forEach((ref) => {
+        if (ref) observer.unobserve(ref)
+      })
+      featureRefs.current.forEach((ref) => {
+        if (ref) observer.unobserve(ref)
+      })
+      serviceRefs.current.forEach((ref) => {
+        if (ref) observer.unobserve(ref)
+      })
+    }
+  }, [])
 
   return (
     <div className="home">
@@ -90,46 +137,30 @@ const Home = () => {
             Experience the perfect blend of traditional barbering excellence and modern style
           </p>
           <div className="features-grid">
-            <div className="feature-card card">
-              <div className="feature-icon-wrapper">
-                <div className="feature-icon">
-                  <FaCut />
+            {[
+              { icon: FaCut, title: 'Master Barbers', text: 'Skilled professionals with over a decade of experience in precision cuts, modern fades, and classic styles.', premium: false },
+              { icon: FaStar, title: 'Premium Service', text: 'We take pride in every detail, ensuring exceptional quality and customer satisfaction with every visit.', premium: true },
+              { icon: FaUsers, title: 'All Ages Welcome', text: 'Family-friendly atmosphere serving men, kids, and seniors with personalized care and attention.', premium: false },
+              { icon: FaMapMarkerAlt, title: 'Prime Location', text: 'Conveniently located in Bonita Springs with easy online booking and flexible scheduling.', premium: false },
+            ].map((feature, index) => {
+              const Icon = feature.icon
+              return (
+                <div 
+                  key={index}
+                  ref={(el) => (featureRefs.current[index] = el)}
+                  className={`feature-card card ${feature.premium ? 'card-premium' : ''}`}
+                >
+                  <div className="feature-icon-wrapper">
+                    <div className="feature-icon">
+                      <Icon />
+                    </div>
+                  </div>
+                  <h3>{feature.title}</h3>
+                  <div className="decorative-line"></div>
+                  <p>{feature.text}</p>
                 </div>
-              </div>
-              <h3>Master Barbers</h3>
-              <div className="decorative-line"></div>
-              <p>Skilled professionals with over a decade of experience in precision cuts, modern fades, and classic styles.</p>
-            </div>
-            <div className="feature-card card card-premium">
-              <div className="feature-icon-wrapper">
-                <div className="feature-icon">
-                  <FaStar />
-                </div>
-              </div>
-              <h3>Premium Service</h3>
-              <div className="decorative-line"></div>
-              <p>We take pride in every detail, ensuring exceptional quality and customer satisfaction with every visit.</p>
-            </div>
-            <div className="feature-card card">
-              <div className="feature-icon-wrapper">
-                <div className="feature-icon">
-                  <FaUsers />
-                </div>
-              </div>
-              <h3>All Ages Welcome</h3>
-              <div className="decorative-line"></div>
-              <p>Family-friendly atmosphere serving men, kids, and seniors with personalized care and attention.</p>
-            </div>
-            <div className="feature-card card">
-              <div className="feature-icon-wrapper">
-                <div className="feature-icon">
-                  <FaMapMarkerAlt />
-                </div>
-              </div>
-              <h3>Prime Location</h3>
-              <div className="decorative-line"></div>
-              <p>Conveniently located in Bonita Springs with easy online booking and flexible scheduling.</p>
-            </div>
+              )
+            })}
           </div>
         </div>
       </section>
@@ -141,45 +172,32 @@ const Home = () => {
             From classic cuts to modern fades, we offer premium grooming services tailored to your style
           </p>
           <div className="services-preview-grid">
-            <div className="service-preview-card card">
-              <div className="service-preview-image image-placeholder">
-                <div className="image-placeholder-overlay"></div>
-                <div className="placeholder-content">
-                  <span>Haircut</span>
+            {[
+              { image: 'Haircut', title: 'Classic Haircut', desc: 'Precision cutting and styling', price: 'Starting at $25' },
+              { image: 'Fade', title: 'Skin Fade', desc: 'Clean, modern fade cuts', price: 'Starting at $30' },
+              { image: 'Beard', title: 'Beard Grooming', desc: 'Shaping, trimming & styling', price: 'Starting at $15' },
+            ].map((service, index) => (
+              <div 
+                key={index}
+                ref={(el) => {
+                  if (!serviceRefs.current) serviceRefs.current = []
+                  serviceRefs.current[index] = el
+                }}
+                className="service-preview-card card"
+              >
+                <div className="service-preview-image image-placeholder">
+                  <div className="image-placeholder-overlay"></div>
+                  <div className="placeholder-content">
+                    <span>{service.image}</span>
+                  </div>
+                </div>
+                <div className="service-preview-content">
+                  <h3>{service.title}</h3>
+                  <p>{service.desc}</p>
+                  <span className="service-price">{service.price}</span>
                 </div>
               </div>
-              <div className="service-preview-content">
-                <h3>Classic Haircut</h3>
-                <p>Precision cutting and styling</p>
-                <span className="service-price">Starting at $25</span>
-              </div>
-            </div>
-            <div className="service-preview-card card">
-              <div className="service-preview-image image-placeholder">
-                <div className="image-placeholder-overlay"></div>
-                <div className="placeholder-content">
-                  <span>Fade</span>
-                </div>
-              </div>
-              <div className="service-preview-content">
-                <h3>Skin Fade</h3>
-                <p>Clean, modern fade cuts</p>
-                <span className="service-price">Starting at $30</span>
-              </div>
-            </div>
-            <div className="service-preview-card card">
-              <div className="service-preview-image image-placeholder">
-                <div className="image-placeholder-overlay"></div>
-                <div className="placeholder-content">
-                  <span>Beard</span>
-                </div>
-              </div>
-              <div className="service-preview-content">
-                <h3>Beard Grooming</h3>
-                <p>Shaping, trimming & styling</p>
-                <span className="service-price">Starting at $15</span>
-              </div>
-            </div>
+            ))}
           </div>
           <div className="services-preview-cta">
             <Link to="/services" className="btn btn-primary">
@@ -197,7 +215,11 @@ const Home = () => {
           </p>
           <div className="testimonials-grid">
             {testimonials.map((testimonial, index) => (
-              <div key={index} className="testimonial-card card">
+              <div 
+                key={index} 
+                ref={(el) => (testimonialRefs.current[index] = el)}
+                className="testimonial-card card"
+              >
                 <div className="testimonial-stars">
                   {[...Array(testimonial.rating)].map((_, i) => (
                     <FaStarIcon key={i} className="star" />
