@@ -266,6 +266,15 @@
   background-color: var(--color-bg-light);
   border-radius: var(--border-radius);
   box-shadow: var(--shadow-sm);
+  color: var(--color-text);
+}
+
+.info-item h3 {
+  color: var(--color-primary);
+}
+
+.info-item p {
+  color: var(--color-text);
 }
 
 .info-item .info-icon {
