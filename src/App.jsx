@@ -3,6 +3,7 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import MobileStickyButton from './components/MobileStickyButton'
 import BackgroundGlow from './components/BackgroundGlow'
+import ScrollToTop from './components/ScrollToTop'
 import Home from './pages/Home'
 import Services from './pages/Services'
 import About from './pages/About'
@@ -14,6 +15,7 @@ import NotFound from './pages/NotFound'
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div className="App">
         <BackgroundGlow />
         <Header />
