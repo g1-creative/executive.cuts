@@ -5,15 +5,15 @@
 }
 
 :root {
-  /* Ultra-Minimal / High-End Color Palette */
-  /* Primary - Pitch Black */
-  --color-primary: #000000;
-  --color-primary-light: #0a0a0a;
-  --color-primary-lighter: #1a1a1a;
+  /* Ultra-Minimal / High-End Color Palette - Deep Navy */
+  /* Primary - Deep Navy Blue */
+  --color-primary: #0d1117;
+  --color-primary-light: #151b26;
+  --color-primary-lighter: #1a1f2e;
   
-  /* Secondary - Soft Black */
-  --color-secondary: #121212;
-  --color-secondary-off: #0d0d0d;
+  /* Secondary - Rich Navy */
+  --color-secondary: #161b22;
+  --color-secondary-off: #0f1419;
   
   /* Accent - Platinum Silver */
   --color-accent: #BFC0C0;
@@ -30,17 +30,17 @@
   --color-text-muted: #787878;
   
   /* Border Colors - Subtle borders for minimal theme */
-  --color-border: #2a2a2a;
-  --color-border-light: #1a1a1a;
-  --color-border-dark: #3a3a3a;
+  --color-border: #2a2f3a;
+  --color-border-light: #1f2530;
+  --color-border-dark: #353a45;
   
-  /* Background Colors - Ultra-minimal theme */
-  --color-bg-light: #121212;
-  --color-bg-lighter: #1a1a1a;
-  --color-bg-dark: #000000;
-  --color-bg-darker: #000000;
-  --color-bg-overlay: rgba(0, 0, 0, 0.95);
-  --color-bg-overlay-dark: rgba(0, 0, 0, 0.9);
+  /* Background Colors - Deep navy theme */
+  --color-bg-light: #161b22;
+  --color-bg-lighter: #1a1f2e;
+  --color-bg-dark: #0d1117;
+  --color-bg-darker: #0a0e14;
+  --color-bg-overlay: rgba(13, 17, 23, 0.95);
+  --color-bg-overlay-dark: rgba(10, 14, 20, 0.9);
   
   /* Status Colors */
   --color-success: #10b981;
