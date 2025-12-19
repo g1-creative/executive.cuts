@@ -1,0 +1,79 @@
+.background-glow {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.glow-layer {
+  position: absolute;
+  inset: 0;
+  transition: opacity 0.8s ease-in-out;
+}
+
+/* Primary glow - soft gold/yellow matching accent colors */
+/* Using a warm yellow-gold similar to #FFF991 but matching site colors */
+.glow-primary {
+  background-image: radial-gradient(
+    circle at center,
+    #FFF9E6 0%,
+    #FFFBE6 20%,
+    rgba(255, 249, 230, 0.5) 40%,
+    transparent 70%
+  );
+  opacity: 0.6;
+  mix-blend-mode: multiply;
+}
+
+/* Secondary glow - subtle accent for depth */
+.glow-secondary {
+  background-image: radial-gradient(
+    circle at 30% 20%,
+    rgba(255, 217, 0, 0.2) 0%,
+    rgba(255, 217, 0, 0.1) 30%,
+    transparent 60%
+  );
+  opacity: 0.4;
+  mix-blend-mode: overlay;
+}
+
+/* Additional subtle glow from bottom */
+.glow-layer::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 50%;
+  background-image: radial-gradient(
+    ellipse at center bottom,
+    rgba(255, 249, 230, 0.15) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+/* Ensure content is above the glow */
+.App {
+  position: relative;
+  z-index: 1;
+}
+
+main {
+  position: relative;
+  z-index: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+  .glow-primary {
+    opacity: 0.3;
+  }
+  
+  .glow-secondary {
+    opacity: 0.2;
+  }
+}
+
