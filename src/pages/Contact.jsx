@@ -1,48 +1,9 @@
-import { useState } from 'react'
 import './Contact.css'
 
 const Contact = () => {
   const address = "8951 Bonita Beach Rd SE Suite 580, Unit 8, Bonita Springs, FL 34135"
   const phone = "(239) 465-7270"
   const email = "ldbcutsbarbershop@gmail.com"
-  
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: ''
-  })
-  
-  const [formStatus, setFormStatus] = useState('')
-
-  const handleInputChange = (e) => {
-    const { name, value } = e.target
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }))
-  }
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    
-    // Create mailto link with form data
-    const subject = encodeURIComponent(`Contact from ${formData.name}`)
-    const body = encodeURIComponent(
-      `Name: ${formData.name}\n` +
-      `Email: ${formData.email}\n` +
-      `Phone: ${formData.phone}\n\n` +
-      `Message:\n${formData.message}`
-    )
-    
-    window.location.href = `mailto:${email}?subject=${subject}&body=${body}`
-    
-    setFormStatus('Opening your email client...')
-    setTimeout(() => {
-      setFormStatus('')
-      setFormData({ name: '', email: '', phone: '', message: '' })
-    }, 3000)
-  }
 
   return (
     <div className="contact-page">
@@ -237,75 +198,6 @@ const Contact = () => {
                 </a>
               </div>
 
-              <div className="contact-form-card">
-                <h3>Send Us a Message</h3>
-                <p className="form-subtitle">Have a question? We'll get back to you soon.</p>
-                
-                <form onSubmit={handleSubmit} className="contact-form">
-                  <div className="form-group">
-                    <label htmlFor="name">Your Name</label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleInputChange}
-                      placeholder="John Doe"
-                      required
-                    />
-                  </div>
-
-                  <div className="form-group">
-                    <label htmlFor="email">Email Address</label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      placeholder="john@example.com"
-                      required
-                    />
-                  </div>
-
-                  <div className="form-group">
-                    <label htmlFor="phone">Phone Number</label>
-                    <input
-                      type="tel"
-                      id="phone"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleInputChange}
-                      placeholder="(239) 465-7270"
-                    />
-                  </div>
-
-                  <div className="form-group">
-                    <label htmlFor="message">Message</label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      value={formData.message}
-                      onChange={handleInputChange}
-                      placeholder="Tell us how we can help you..."
-                      rows="4"
-                      required
-                    ></textarea>
-                  </div>
-
-                  <button type="submit" className="btn btn-primary">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <line x1="22" y1="2" x2="11" y2="13"/>
-                      <polygon points="22 2 15 22 11 13 2 9 22 2"/>
-                    </svg>
-                    Send Message
-                  </button>
-
-                  {formStatus && (
-                    <p className="form-status">{formStatus}</p>
-                  )}
-                </form>
-              </div>
             </div>
           </div>
         </div>
