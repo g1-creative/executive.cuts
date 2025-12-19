@@ -40,6 +40,7 @@ const Marquee = ({
       aria-live={ariaLive}
       role={ariaRole}
       tabIndex={0}
+      style={{ touchAction: 'none' }}
     >
       {content}
     </div>

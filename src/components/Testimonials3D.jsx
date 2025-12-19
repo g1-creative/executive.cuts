@@ -96,7 +96,7 @@ const Testimonials3D = ({ testimonials = [] }) => {
   const displayTestimonials = testimonials.length > 0 ? testimonials : defaultTestimonials
 
   return (
-    <div className="testimonials-3d-container">
+    <div className="testimonials-3d-container" style={{ touchAction: 'pan-y' }}>
       <div className="testimonials-3d-wrapper">
         {/* Vertical Marquee (downwards) */}
         <Marquee vertical pauseOnHover repeat={3} className="testimonials-3d-marquee">

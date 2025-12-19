@@ -353,6 +353,7 @@
   background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-bg-light) 50%, var(--color-secondary) 100%);
   color: var(--color-text);
   padding: var(--spacing-3xl) 0;
+  overflow-x: hidden;
 }
 
 .testimonials * {
@@ -367,6 +368,22 @@
 
 .testimonials p {
   color: var(--color-text);
+}
+
+.testimonials-3d-wrapper-section {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+@media (max-width: 767px) {
+  .testimonials {
+    padding: var(--spacing-xl) 0;
+  }
+
+  .testimonials-3d-wrapper-section {
+    padding: var(--spacing-lg) 0;
+    overflow-x: visible;
+  }
 }
 
 .testimonials .section-title,
