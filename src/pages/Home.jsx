@@ -3,6 +3,7 @@ import { useEffect, useRef } from 'react'
 import { FaCut, FaStar, FaUsers, FaMapMarkerAlt, FaPhone, FaStar as FaStarIcon } from 'react-icons/fa'
 import BooksyWidget from '../components/BooksyWidget'
 import Testimonials3D from '../components/Testimonials3D'
+import ImageAutoSlider from '../components/ImageAutoSlider'
 import { useScrollAnimation } from '../hooks/useScrollAnimation'
 import './Home.css'
 
@@ -172,11 +173,32 @@ const Home = () => {
           <p className="section-subtitle">
             From classic cuts to modern fades, we offer premium grooming services tailored to your style
           </p>
+          
+          {/* Image Auto Slider */}
+          <div className="services-preview-slider">
+            <ImageAutoSlider />
+          </div>
+
           <div className="services-preview-grid">
             {[
-              { image: 'Haircut', title: 'Classic Haircut', desc: 'Precision cutting and styling', price: 'Starting at $25' },
-              { image: 'Fade', title: 'Skin Fade', desc: 'Clean, modern fade cuts', price: 'Starting at $30' },
-              { image: 'Beard', title: 'Beard Grooming', desc: 'Shaping, trimming & styling', price: 'Starting at $15' },
+              { 
+                image: 'https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=700&h=500&fit=crop&auto=format&q=80',
+                title: 'Classic Haircut', 
+                desc: 'Precision cutting and styling', 
+                price: 'Starting at $25' 
+              },
+              { 
+                image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=700&h=500&fit=crop&auto=format&q=80',
+                title: 'Skin Fade', 
+                desc: 'Clean, modern fade cuts', 
+                price: 'Starting at $30' 
+              },
+              { 
+                image: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=700&h=500&fit=crop&auto=format&q=80',
+                title: 'Beard Grooming', 
+                desc: 'Shaping, trimming & styling', 
+                price: 'Starting at $15' 
+              },
             ].map((service, index) => (
               <div 
                 key={index}
@@ -186,11 +208,13 @@ const Home = () => {
                 }}
                 className="service-preview-card card"
               >
-                <div className="service-preview-image image-placeholder">
-                  <div className="image-placeholder-overlay"></div>
-                  <div className="placeholder-content">
-                    <span>{service.image}</span>
-                  </div>
+                <div className="service-preview-image">
+                  <img 
+                    src={service.image} 
+                    alt={service.title}
+                    className="service-preview-img"
+                  />
+                  <div className="service-preview-image-overlay"></div>
                 </div>
                 <div className="service-preview-content">
                   <h3>{service.title}</h3>
