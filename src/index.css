@@ -5,42 +5,42 @@
 }
 
 :root {
-  /* Professional Barbershop Color Palette - Dark Premium Theme */
-  /* Primary Colors - Rich dark tones */
-  --color-primary: #ffffff;
-  --color-primary-light: #f5f5f5;
-  --color-primary-lighter: #e8e8e8;
+  /* Ultra-Minimal / High-End Color Palette */
+  /* Primary - Pitch Black */
+  --color-primary: #000000;
+  --color-primary-light: #0a0a0a;
+  --color-primary-lighter: #1a1a1a;
   
-  /* Secondary Colors - Dark backgrounds */
-  --color-secondary: #1a1a1a;
-  --color-secondary-off: #0f0f0f;
+  /* Secondary - Soft Black */
+  --color-secondary: #121212;
+  --color-secondary-off: #0d0d0d;
   
-  /* Accent Colors - Gold palette for premium feel */
-  --color-accent: #c9a55a;
-  --color-accent-dark: #a88840;
-  --color-accent-light: #e6d5a8;
-  --color-accent-gold: #d4af37;
-  --color-accent-gold-light: #f4e4a6;
+  /* Accent - Platinum Silver */
+  --color-accent: #BFC0C0;
+  --color-accent-dark: #9a9b9b;
+  --color-accent-light: #d4d5d5;
+  --color-accent-gold: #BFC0C0;
+  --color-accent-gold-light: #d4d5d5;
   
-  /* Text Colors - Light text for dark backgrounds */
-  --color-text: #e8e8e8;
-  --color-text-on-dark: #ffffff;
-  --color-text-light: #b8b8b8;
-  --color-text-lighter: #989898;
+  /* Text - White */
+  --color-text: #FFFFFF;
+  --color-text-on-dark: #FFFFFF;
+  --color-text-light: #BFC0C0;
+  --color-text-lighter: #9a9b9b;
   --color-text-muted: #787878;
   
-  /* Border Colors - Subtle borders for dark theme */
-  --color-border: #333333;
-  --color-border-light: #2a2a2a;
-  --color-border-dark: #404040;
+  /* Border Colors - Subtle borders for minimal theme */
+  --color-border: #2a2a2a;
+  --color-border-light: #1a1a1a;
+  --color-border-dark: #3a3a3a;
   
-  /* Background Colors - Dark theme */
-  --color-bg-light: #1f1f1f;
-  --color-bg-lighter: #252525;
-  --color-bg-dark: #151515;
-  --color-bg-darker: #0a0a0a;
-  --color-bg-overlay: rgba(26, 26, 26, 0.95);
-  --color-bg-overlay-dark: rgba(0, 0, 0, 0.8);
+  /* Background Colors - Ultra-minimal theme */
+  --color-bg-light: #121212;
+  --color-bg-lighter: #1a1a1a;
+  --color-bg-dark: #000000;
+  --color-bg-darker: #000000;
+  --color-bg-overlay: rgba(0, 0, 0, 0.95);
+  --color-bg-overlay-dark: rgba(0, 0, 0, 0.9);
   
   /* Status Colors */
   --color-success: #10b981;
@@ -61,12 +61,12 @@
   --border-radius-lg: 8px;
   --border-radius-xl: 12px;
   
-  /* Shadows - Enhanced for dark theme */
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
-  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.5);
-  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.6);
-  --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.7);
-  --shadow-accent: 0 8px 32px rgba(201, 165, 90, 0.4);
+  /* Shadows - Enhanced for minimal theme */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.6);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.7);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.8);
+  --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.9);
+  --shadow-accent: 0 8px 32px rgba(191, 192, 192, 0.2);
   
   /* Transitions */
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -103,12 +103,12 @@ body {
   background-image: 
     radial-gradient(
       circle at 20% 30%,
-      rgba(201, 165, 90, 0.15) 0%,
+      rgba(191, 192, 192, 0.08) 0%,
       transparent 50%
     ),
     radial-gradient(
       circle at 80% 70%,
-      rgba(212, 175, 55, 0.1) 0%,
+      rgba(191, 192, 192, 0.05) 0%,
       transparent 50%
     );
   background-attachment: fixed;
@@ -249,35 +249,36 @@ button {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
-  color: var(--color-secondary);
+  background: var(--color-accent);
+  color: var(--color-primary);
   box-shadow: var(--shadow-md);
 }
 
 .btn-primary:hover {
+  background: var(--color-accent-light);
   box-shadow: var(--shadow-lg);
   transform: translateY(-3px);
 }
 
 .btn-secondary {
   background-color: transparent;
-  color: var(--color-primary);
-  border: 2px solid var(--color-primary);
+  color: var(--color-text);
+  border: 2px solid var(--color-accent);
   box-shadow: none;
 }
 
 .btn-secondary:hover {
-  background-color: var(--color-primary);
-  color: var(--color-secondary);
+  background-color: var(--color-accent);
+  color: var(--color-primary);
   box-shadow: var(--shadow-md);
   transform: translateY(-2px);
 }
 
 .btn-accent {
-  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-gold) 50%, var(--color-accent-dark) 100%);
-  color: var(--color-secondary-off);
+  background: var(--color-accent);
+  color: var(--color-primary);
   font-weight: 700;
-  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.5), 0 8px 32px rgba(212, 175, 55, 0.3);
+  box-shadow: 0 4px 20px rgba(191, 192, 192, 0.3), 0 8px 32px rgba(191, 192, 192, 0.2);
   position: relative;
   overflow: hidden;
 }
@@ -289,7 +290,7 @@ button {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
   transition: left 0.5s;
 }
 
@@ -298,7 +299,8 @@ button {
 }
 
 .btn-accent:hover {
-  box-shadow: 0 6px 30px rgba(212, 175, 55, 0.5), 0 12px 40px rgba(212, 175, 55, 0.3);
+  background: var(--color-accent-light);
+  box-shadow: 0 6px 30px rgba(191, 192, 192, 0.4), 0 12px 40px rgba(191, 192, 192, 0.3);
   transform: translateY(-3px) scale(1.02);
 }
 
@@ -323,9 +325,9 @@ button {
   transform: translateX(-50%);
   width: 100px;
   height: 4px;
-  background: linear-gradient(90deg, transparent, var(--color-accent) 20%, var(--color-accent-gold) 50%, var(--color-accent) 80%, transparent);
+  background: linear-gradient(90deg, transparent, var(--color-accent) 20%, var(--color-accent) 50%, var(--color-accent) 80%, transparent);
   border-radius: 2px;
-  box-shadow: 0 2px 6px rgba(212, 175, 55, 0.4);
+  box-shadow: 0 2px 6px rgba(191, 192, 192, 0.3);
 }
 
 .section-subtitle {
@@ -382,24 +384,24 @@ main section p {
 .decorative-line {
   width: 80px;
   height: 4px;
-  background: linear-gradient(90deg, transparent, var(--color-accent) 20%, var(--color-accent-gold) 50%, var(--color-accent) 80%, transparent);
+  background: linear-gradient(90deg, transparent, var(--color-accent) 20%, var(--color-accent) 50%, var(--color-accent) 80%, transparent);
   margin: var(--spacing-md) auto;
   border-radius: 2px;
-  box-shadow: 0 2px 4px rgba(212, 175, 55, 0.3);
+  box-shadow: 0 2px 4px rgba(191, 192, 192, 0.2);
 }
 
 .accent-badge {
   display: inline-block;
   padding: 0.35rem 1rem;
-  background: linear-gradient(135deg, var(--color-accent-light) 0%, var(--color-accent) 50%, var(--color-accent-gold) 100%);
+  background: var(--color-accent);
   color: var(--color-primary);
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   border-radius: 2rem;
-  box-shadow: 0 2px 8px rgba(212, 175, 55, 0.3);
-  border: 1px solid rgba(212, 175, 55, 0.2);
+  box-shadow: 0 2px 8px rgba(191, 192, 192, 0.2);
+  border: 1px solid rgba(191, 192, 192, 0.15);
 }
 
 /* Animations */
@@ -580,8 +582,8 @@ main section p {
       45deg,
       transparent,
       transparent 10px,
-      rgba(201, 165, 90, 0.03) 10px,
-      rgba(201, 165, 90, 0.03) 20px
+      rgba(191, 192, 192, 0.02) 10px,
+      rgba(191, 192, 192, 0.02) 20px
     );
   pointer-events: none;
 }

@@ -267,8 +267,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 2px 8px rgba(212, 175, 55, 0.3);
-  border: 2px solid rgba(212, 175, 55, 0.2);
+  box-shadow: 0 2px 8px rgba(191, 192, 192, 0.3);
+  border: 2px solid rgba(191, 192, 192, 0.2);
 }
 
 .service-icon-small svg {
@@ -314,12 +314,12 @@
   color: var(--color-secondary);
   padding: var(--spacing-3xl);
   border-radius: var(--border-radius-xl);
-  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(212, 175, 55, 0.2);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(191, 192, 192, 0.2);
   max-width: 800px;
   margin: 0 auto;
   position: relative;
   overflow: hidden;
-  border: 2px solid rgba(212, 175, 55, 0.1);
+  border: 2px solid rgba(191, 192, 192, 0.1);
 }
 
 .cta-box::after {
@@ -339,7 +339,7 @@
   right: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(191, 192, 192, 0.15) 0%, transparent 70%);
   pointer-events: none;
   animation: rotate 20s linear infinite;
 }
@@ -379,7 +379,7 @@
   min-width: 280px;
   position: relative;
   z-index: 2;
-  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.4);
+  box-shadow: 0 4px 20px rgba(191, 192, 192, 0.4);
 }
 
 /* Services Booking */

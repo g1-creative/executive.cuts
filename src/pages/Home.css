@@ -16,8 +16,8 @@
   right: 0;
   bottom: 0;
   background-image: 
-    linear-gradient(30deg, transparent 12%, rgba(201, 165, 90, 0.04) 12%, rgba(201, 165, 90, 0.04) 13%, transparent 13%),
-    linear-gradient(150deg, transparent 12%, rgba(201, 165, 90, 0.04) 12%, rgba(201, 165, 90, 0.04) 13%, transparent 13%);
+    linear-gradient(30deg, transparent 12%, rgba(191, 192, 192, 0.02) 12%, rgba(191, 192, 192, 0.02) 13%, transparent 13%),
+    linear-gradient(150deg, transparent 12%, rgba(191, 192, 192, 0.02) 12%, rgba(191, 192, 192, 0.02) 13%, transparent 13%);
   background-size: 60px 60px;
   pointer-events: none;
 }
@@ -36,22 +36,39 @@
 }
 
 .hero-logo {
-  margin-bottom: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
+  align-items: center;
   opacity: 0;
+  animation: fadeInUp 0.8s ease-out 0.2s forwards;
 }
 
 .hero-logo-image {
-  height: 80px;
+  height: 180px;
   width: auto;
   object-fit: contain;
-  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.15));
+  animation: logoFloat 3s ease-in-out infinite;
+  transition: transform 0.3s ease;
+}
+
+.hero-logo-image:hover {
+  transform: scale(1.05);
+}
+
+@keyframes logoFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 @media (max-width: 767px) {
   .hero-logo-image {
-    height: 60px;
+    height: 120px;
   }
 }
 
@@ -112,7 +129,7 @@
   font-family: var(--font-heading);
   font-size: 2.5rem;
   font-weight: 700;
-  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-gold) 100%);
+  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-light) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -233,8 +250,8 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  box-shadow: 0 4px 16px rgba(212, 175, 55, 0.3);
-  border: 2px solid rgba(212, 175, 55, 0.2);
+  box-shadow: 0 4px 16px rgba(191, 192, 192, 0.2);
+  border: 2px solid rgba(191, 192, 192, 0.15);
 }
 
 .feature-icon-wrapper::before {
@@ -372,8 +389,8 @@
   font-weight: 700;
   border-radius: var(--border-radius);
   font-size: 0.95rem;
-  box-shadow: 0 2px 8px rgba(212, 175, 55, 0.3);
-  border: 1px solid rgba(212, 175, 55, 0.2);
+  box-shadow: 0 2px 8px rgba(191, 192, 192, 0.2);
+  border: 1px solid rgba(191, 192, 192, 0.15);
 }
 
 .services-preview-cta {
@@ -542,8 +559,8 @@
   right: 0;
   bottom: 0;
   background-image: 
-    radial-gradient(circle at 20% 50%, rgba(201, 165, 90, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 80% 80%, rgba(201, 165, 90, 0.08) 0%, transparent 50%);
+    radial-gradient(circle at 20% 50%, rgba(191, 192, 192, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(191, 192, 192, 0.03) 0%, transparent 50%);
   pointer-events: none;
 }
 
