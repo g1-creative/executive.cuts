@@ -82,6 +82,15 @@
   justify-content: center;
   text-align: center;
   background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-bg-light) 100%);
+  color: var(--color-text);
+}
+
+.featured-service-info h3 {
+  color: var(--color-primary);
+}
+
+.featured-service-info p {
+  color: var(--color-text);
 }
 
 .featured-service-info .featured-service-icon {

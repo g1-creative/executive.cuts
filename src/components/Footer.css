@@ -1,7 +1,26 @@
 .footer {
   background: linear-gradient(180deg, var(--color-bg-darker) 0%, var(--color-primary) 100%);
-  color: var(--color-secondary);
+  color: var(--color-text-on-dark);
   margin-top: 0;
+}
+
+.footer * {
+  color: var(--color-text-on-dark);
+}
+
+.footer h3,
+.footer h4 {
+  color: var(--color-text-on-dark);
+}
+
+.footer p,
+.footer span,
+.footer a {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.footer a:hover {
+  color: var(--color-accent-light);
 }
 
 .footer-top {

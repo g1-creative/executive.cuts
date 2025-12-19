@@ -329,6 +329,20 @@
   padding: var(--spacing-3xl) 0;
 }
 
+.testimonials * {
+  color: inherit;
+}
+
+.testimonials h2,
+.testimonials h3,
+.testimonials h4 {
+  color: var(--color-primary);
+}
+
+.testimonials p {
+  color: var(--color-text);
+}
+
 .testimonials .section-title,
 .testimonials .section-subtitle {
   color: var(--color-primary);

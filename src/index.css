@@ -5,23 +5,47 @@
 }
 
 :root {
-  /* Premium Barbershop Color Palette - Enhanced */
-  --color-primary: #0d0d0d;
-  --color-primary-light: #1f1f1f;
+  /* Professional Barbershop Color Palette - Cohesive & Accessible */
+  /* Primary Colors - Dark for contrast */
+  --color-primary: #0a0a0a;
+  --color-primary-light: #1a1a1a;
+  --color-primary-lighter: #2a2a2a;
+  
+  /* Secondary Colors - Pure white for backgrounds */
   --color-secondary: #ffffff;
-  --color-accent: #d4af37;
-  --color-accent-dark: #b8941f;
-  --color-accent-light: #f4e4a6;
-  --color-accent-gold: #ffd700;
+  --color-secondary-off: #fafafa;
+  
+  /* Accent Colors - Gold palette for premium feel */
+  --color-accent: #c9a55a;
+  --color-accent-dark: #a88840;
+  --color-accent-light: #e6d5a8;
+  --color-accent-gold: #d4af37;
+  --color-accent-gold-light: #f4e4a6;
+  
+  /* Text Colors - High contrast for readability */
   --color-text: #1a1a1a;
-  --color-text-light: #5a5a5a;
-  --color-text-lighter: #8a8a8a;
-  --color-border: #d4d4d4;
-  --color-bg-light: #f8f8f8;
+  --color-text-on-dark: #ffffff;
+  --color-text-light: #4a4a4a;
+  --color-text-lighter: #6a6a6a;
+  --color-text-muted: #8a8a8a;
+  
+  /* Border Colors */
+  --color-border: #e0e0e0;
+  --color-border-light: #f0f0f0;
+  --color-border-dark: #d0d0d0;
+  
+  /* Background Colors - Light theme */
+  --color-bg-light: #fafafa;
+  --color-bg-lighter: #f5f5f5;
   --color-bg-dark: #f0f0f0;
-  --color-bg-darker: #1a1a1a;
+  --color-bg-darker: #0f0f0f;
+  --color-bg-overlay: rgba(255, 255, 255, 0.95);
+  --color-bg-overlay-dark: rgba(0, 0, 0, 0.7);
+  
+  /* Status Colors */
   --color-success: #10b981;
   --color-warning: #f59e0b;
+  --color-error: #ef4444;
   
   /* Spacing */
   --spacing-xs: 0.5rem;
@@ -75,16 +99,16 @@ body {
   -moz-osx-font-smoothing: grayscale;
   color: var(--color-text);
   line-height: 1.7;
-  background-color: #FFFEF8;
+  background-color: var(--color-secondary-off);
   background-image: 
     radial-gradient(
       circle at 20% 30%,
-      rgba(255, 249, 230, 0.3) 0%,
+      rgba(244, 228, 166, 0.25) 0%,
       transparent 50%
     ),
     radial-gradient(
       circle at 80% 70%,
-      rgba(255, 217, 0, 0.15) 0%,
+      rgba(212, 175, 55, 0.12) 0%,
       transparent 50%
     );
   background-attachment: fixed;
@@ -111,6 +135,22 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: -0.02em;
 }
 
+/* Ensure headings are always visible */
+h1, h2, h3, h4, h5, h6 {
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+/* Dark backgrounds need light text */
+.dark-bg h1,
+.dark-bg h2,
+.dark-bg h3,
+.dark-bg h4,
+.dark-bg h5,
+.dark-bg h6 {
+  color: var(--color-text-on-dark);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
 h1 {
   font-size: clamp(2.5rem, 6vw, 4.5rem);
   font-weight: 700;
@@ -128,6 +168,12 @@ h3 {
 
 p {
   margin-bottom: var(--spacing-sm);
+  color: var(--color-text);
+}
+
+/* Ensure paragraphs are always visible */
+.dark-bg p {
+  color: var(--color-text-on-dark);
 }
 
 a {
@@ -291,6 +337,33 @@ button {
   line-height: 1.8;
 }
 
+/* Ensure section subtitles are visible on dark backgrounds */
+.dark-bg .section-subtitle {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Global Text Visibility Rules - Ensure text is always visible */
+main {
+  color: var(--color-text);
+}
+
+main section {
+  color: var(--color-text);
+}
+
+main section h1,
+main section h2,
+main section h3,
+main section h4,
+main section h5,
+main section h6 {
+  color: var(--color-primary);
+}
+
+main section p {
+  color: var(--color-text);
+}
+
 /* Utility Classes */
 .accent-text {
   color: var(--color-accent);
@@ -415,6 +488,22 @@ button {
   box-shadow: var(--shadow-md);
   transition: var(--transition);
   overflow: hidden;
+  color: var(--color-text);
+}
+
+.card h1,
+.card h2,
+.card h3,
+.card h4,
+.card h5,
+.card h6 {
+  color: var(--color-primary);
+}
+
+.card p,
+.card span,
+.card div {
+  color: var(--color-text);
 }
 
 .card:hover {

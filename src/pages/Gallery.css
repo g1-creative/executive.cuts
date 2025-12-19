@@ -23,10 +23,24 @@
   text-align: center;
   padding: var(--spacing-3xl) 0 var(--spacing-xl);
   background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-bg-light) 100%);
+  color: var(--color-text);
+}
+
+.gallery-parallax-intro h2 {
+  color: var(--color-primary);
+}
+
+.gallery-parallax-intro p {
+  color: var(--color-text-light);
 }
 
 .gallery-content {
   background-color: var(--color-secondary);
+  color: var(--color-text);
+}
+
+.gallery-content h2 {
+  color: var(--color-primary);
 }
 
 .gallery-grid {
