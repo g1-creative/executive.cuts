@@ -30,10 +30,10 @@ const Header = () => {
         <div className="container">
           <div className="header-content">
             <Link to="/" className="logo" onClick={closeMenu}>
-              <img src={logoImage} alt="LDB Cuts Barbershop" className="logo-image" />
+              <img src={logoImage} alt="Executive Cuts Barber Shop" className="logo-image" />
               <div className="logo-text-container">
-                <span className="logo-text">LDB Cuts</span>
-                <span className="logo-subtitle">Barbershop</span>
+                <span className="logo-text">Executive Cuts</span>
+                <span className="logo-subtitle">Barber Shop</span>
               </div>
             </Link>
             

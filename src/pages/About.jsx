@@ -1,15 +1,19 @@
 import './About.css'
+import logoImage from '../images/logo and favicon.png'
 
 const About = () => {
   return (
     <div className="about-page">
       <section className="about-hero section">
         <div className="container">
+          <div className="about-hero-logo">
+            <img src={logoImage} alt="Executive Cuts Barber Shop Logo" className="about-hero-logo-image" />
+          </div>
           <span className="accent-badge">Our Story</span>
-          <h1 className="section-title">About LDB Cuts Barbershop</h1>
+          <h1 className="section-title">About Executive Cuts Barber Shop</h1>
           <p className="section-subtitle">
             A family-friendly, professional barbershop dedicated to providing exceptional grooming services 
-            to the Bonita Springs community.
+            to the Naples community.
           </p>
         </div>
       </section>
@@ -18,35 +22,35 @@ const About = () => {
         <div className="container">
           <div className="about-grid">
             <div className="about-text">
-              <h2>Your Trusted Barbershop in Bonita Springs</h2>
+              <h2>Your Trusted Barbershop in Naples</h2>
               <p>
-                LDB Cuts Barbershop is a family-friendly, professional barbershop dedicated to providing 
-                exceptional grooming services to the Bonita Springs community. We pride ourselves on creating 
+                Executive Cuts Barber Shop is a family-friendly, professional barbershop dedicated to providing 
+                exceptional grooming services to the Naples community. We pride ourselves on creating 
                 a welcoming atmosphere where clients of all ages feel comfortable and valued.
               </p>
               <p>
-                Our experienced barbers bring years of expertise to every appointment, ensuring that each cut 
-                is executed with precision and attention to detail. Whether you're looking for a classic 
-                haircut, a modern fade, or a complete grooming service, we have the skills and dedication to 
-                deliver results that exceed your expectations.
+                Our friendly, professional barbers are committed to quality cuts and customer satisfaction, 
+                ensuring that each cut is executed with precision and attention to detail. Whether you're looking for 
+                a classic haircut, a modern fade, beard shaping, or a complete grooming service, we have the skills 
+                and dedication to deliver results that exceed your expectations.
               </p>
               <p>
-                At LDB Cuts, customer satisfaction is our top priority. We take the time to understand your 
-                style preferences and work with you to achieve the look you want. From kids' cuts to senior 
-                services, we welcome everyone and treat every client with the respect and professionalism they 
+                At Executive Cuts, customer satisfaction is our top priority. We take the time to understand your 
+                style preferences and work with you to achieve the look you want. From kids' cuts to all ages, 
+                we welcome everyone and treat every client with the respect and professionalism they 
                 deserve.
               </p>
               <p>
-                Located in the heart of Bonita Springs, we're conveniently accessible and easy to book through 
-                our online booking platform. Experience the LDB Cuts difference – where quality, professionalism, 
-                and customer care come together.
+                Located at 2650 Airport-Pulling Rd, Suite E in Naples, we're conveniently accessible with parking 
+                available and wheelchair accessible. Easy to book through our online booking platform. Experience 
+                the Executive Cuts difference – where quality, professionalism, and customer care come together.
               </p>
             </div>
             
             <div className="about-image">
               <img 
                 src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=1000&fit=crop&auto=format&q=80"
-                alt="Professional barber at LDB Cuts"
+                alt="Professional barber at Executive Cuts"
                 className="about-img"
               />
             </div>
@@ -95,7 +99,7 @@ const About = () => {
                   </svg>
                 </div>
                 <h3>Community</h3>
-                <p>We're proud to serve the Bonita Springs community and build lasting relationships with our clients.</p>
+                <p>We're proud to serve the Naples community and build lasting relationships with our clients.</p>
               </div>
             </div>
           </div>

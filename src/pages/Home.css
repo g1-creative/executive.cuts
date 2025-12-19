@@ -35,6 +35,26 @@
   max-width: 650px;
 }
 
+.hero-logo {
+  margin-bottom: var(--spacing-lg);
+  display: flex;
+  justify-content: flex-start;
+  opacity: 0;
+}
+
+.hero-logo-image {
+  height: 80px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+}
+
+@media (max-width: 767px) {
+  .hero-logo-image {
+    height: 60px;
+  }
+}
+
 .hero-content .accent-badge {
   margin-bottom: var(--spacing-md);
   opacity: 0;

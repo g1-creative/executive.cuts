@@ -6,15 +6,15 @@ import './Footer.css'
 const Footer = () => {
   const socialLinks = [
     { name: 'Facebook', Icon: FaFacebook, url: '#' },
-    { name: 'Instagram', Icon: FaInstagram, url: '#' },
+    { name: 'Instagram', Icon: FaInstagram, url: 'https://www.instagram.com/executivecutsbarbershop/' },
     { name: 'Twitter', Icon: FaTwitter, url: '#' },
     { name: 'Yelp', Icon: FaYelp, url: '#' },
   ]
 
   const businessHours = [
-    { days: 'Monday - Friday', hours: '9:00 AM - 6:00 PM' },
-    { days: 'Saturday', hours: '8:00 AM - 5:00 PM' },
-    { days: 'Sunday', hours: 'Closed' },
+    { days: 'Monday - Friday', hours: '9:00 AM - 7:00 PM' },
+    { days: 'Saturday', hours: '9:00 AM - 8:00 PM' },
+    { days: 'Sunday', hours: '10:00 AM - 3:00 PM' },
   ]
 
   return (
@@ -24,15 +24,15 @@ const Footer = () => {
           <div className="footer-content">
             <div className="footer-section footer-brand">
               <div className="footer-logo">
-                <img src={logoImage} alt="LDB Cuts Barbershop" />
+                <img src={logoImage} alt="Executive Cuts Barber Shop" />
                 <div>
-                  <h3 className="footer-title">LDB Cuts</h3>
-                  <span className="footer-subtitle">Barbershop</span>
+                  <h3 className="footer-title">Executive Cuts</h3>
+                  <span className="footer-subtitle">Barber Shop</span>
                 </div>
               </div>
               <p className="footer-description">
-                Your trusted barbershop in Bonita Springs. Delivering precision cuts, clean fades, 
-                and exceptional grooming services since day one.
+                Your trusted barbershop in Naples. Friendly, professional barbers committed to quality cuts 
+                and customer satisfaction. Wheelchair accessible with parking available.
               </p>
               <div className="footer-social">
                 {socialLinks.map((social, index) => {
@@ -82,18 +82,18 @@ const Footer = () => {
               <ul className="footer-contact">
                 <li className="contact-item">
                   <FaPhone className="contact-icon" />
-                  <a href="tel:+12394657270">(239) 465-7270</a>
+                  <a href="tel:+12392346204">(239) 234-6204</a>
                 </li>
                 <li className="contact-item">
                   <FaEnvelope className="contact-icon" />
-                  <a href="mailto:ldbcutsbarbershop@gmail.com">ldbcutsbarbershop@gmail.com</a>
+                  <a href="mailto:info@executivecuts.com">info@executivecuts.com</a>
                 </li>
                 <li className="contact-item">
                   <FaMapMarkerAlt className="contact-icon" />
                   <span>
-                    8951 Bonita Beach Rd SE<br />
-                    Suite 580, Unit 8<br />
-                    Bonita Springs, FL 34135
+                    2650 Airport-Pulling Rd<br />
+                    Suite E<br />
+                    Naples, FL 34112
                   </span>
                 </li>
               </ul>
@@ -109,7 +109,7 @@ const Footer = () => {
         <div className="container">
           <div className="footer-bottom-content">
             <p className="footer-copyright">
-              &copy; {new Date().getFullYear()} LDB Cuts Barbershop. All rights reserved.
+              &copy; {new Date().getFullYear()} Executive Cuts Barber Shop. All rights reserved.
             </p>
             <div className="footer-legal">
               <Link to="/privacy">Privacy Policy</Link>

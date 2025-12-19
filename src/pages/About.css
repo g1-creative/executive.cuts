@@ -23,9 +23,29 @@
   z-index: 1;
 }
 
+.about-hero-logo {
+  margin-bottom: var(--spacing-xl);
+  display: flex;
+  justify-content: center;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.about-hero-logo-image {
+  height: 100px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
+}
+
+@media (max-width: 767px) {
+  .about-hero-logo-image {
+    height: 70px;
+  }
+}
+
 .about-hero .accent-badge {
   margin-bottom: var(--spacing-md);
-  animation: fadeInUp 0.6s ease-out;
+  animation: fadeInUp 0.6s ease-out 0.1s backwards;
 }
 
 .about-hero .section-title {

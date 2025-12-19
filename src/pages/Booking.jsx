@@ -9,7 +9,7 @@ import {
 import './Booking.css'
 
 const Booking = () => {
-  const booksyUrl = 'https://booksy.com/en-us/1073297_ldbcuts-barbershop_barber-shop_15815_bonita-springs'
+  const booksyUrl = 'https://booksy.com/en-us/811014_executive-cuts_barber-shop_15685_naples'
 
   const openBooksy = () => {
     // Open Booksy in a new window with specific dimensions

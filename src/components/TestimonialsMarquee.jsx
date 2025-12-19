@@ -21,7 +21,7 @@ const TestimonialsMarquee = ({ testimonials = [] }) => {
   const defaultTestimonials = [
     {
       name: 'Michael Rodriguez',
-      review: 'Best barbershop in Bonita Springs! The attention to detail is unmatched. Every cut is perfect.',
+      review: 'Best barbershop in Naples! The attention to detail is unmatched. Every cut is perfect.',
       rating: 5,
     },
     {

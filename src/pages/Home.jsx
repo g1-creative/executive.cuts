@@ -5,6 +5,7 @@ import BooksyWidget from '../components/BooksyWidget'
 import Testimonials3D from '../components/Testimonials3D'
 import ImageAutoSlider from '../components/ImageAutoSlider'
 import { useScrollAnimation } from '../hooks/useScrollAnimation'
+import logoImage from '../images/logo and favicon.png'
 import './Home.css'
 
 const Home = () => {
@@ -18,7 +19,7 @@ const Home = () => {
   const testimonials = [
     {
       name: 'Michael Rodriguez',
-      review: 'Best barbershop in Bonita Springs! The attention to detail is unmatched. Every cut is perfect.',
+      review: 'Best barbershop in Naples! The attention to detail is unmatched. Every cut is perfect.',
       rating: 5,
     },
     {
@@ -84,6 +85,9 @@ const Home = () => {
         <div className="hero-bg-pattern"></div>
         <div className="container">
           <div className="hero-content">
+            <div className="hero-logo animate-fadeIn">
+              <img src={logoImage} alt="Executive Cuts Barber Shop Logo" className="hero-logo-image" />
+            </div>
             <span className="accent-badge animate-fadeIn">Premium Barbershop</span>
             <h1 className="hero-title animate-fadeInUp">
               Precision Cuts.{' '}
@@ -91,8 +95,8 @@ const Home = () => {
               Professional Service.
             </h1>
             <p className="hero-subtitle animate-fadeInUp animate-delay-1">
-              Experience the finest in barbershop services at LDB Cuts. Our master barbers bring years of expertise 
-              to every cut, ensuring you leave looking sharp and feeling confident.
+              Experience the finest in barbershop services at Executive Cuts. Our friendly, professional barbers are committed 
+              to quality cuts and customer satisfaction, ensuring you leave looking sharp and feeling confident.
             </p>
             <div className="hero-cta animate-fadeInUp animate-delay-2">
               <Link 
@@ -102,7 +106,7 @@ const Home = () => {
                 Book Appointment
               </Link>
               <a 
-                href="tel:+12394657270" 
+                href="tel:+12392346204" 
                 className="btn btn-secondary"
               >
                 <FaPhone /> Call Now
@@ -120,7 +124,7 @@ const Home = () => {
           <div className="hero-image">
             <img 
               src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=1200&h=800&fit=crop&auto=format&q=80"
-              alt="Professional barbershop - LDB Cuts"
+              alt="Professional barbershop - Executive Cuts"
               className="hero-img"
             />
           </div>
@@ -129,7 +133,7 @@ const Home = () => {
 
       <section className="features section pattern-bg">
         <div className="container">
-          <h2 className="section-title">Why Choose LDB Cuts?</h2>
+          <h2 className="section-title">Why Choose Executive Cuts?</h2>
           <p className="section-subtitle">
             Experience the perfect blend of traditional barbering excellence and modern style
           </p>
@@ -138,7 +142,7 @@ const Home = () => {
               { icon: FaCut, title: 'Master Barbers', text: 'Skilled professionals with over a decade of experience in precision cuts, modern fades, and classic styles.', premium: false },
               { icon: FaStar, title: 'Premium Service', text: 'We take pride in every detail, ensuring exceptional quality and customer satisfaction with every visit.', premium: true },
               { icon: FaUsers, title: 'All Ages Welcome', text: 'Family-friendly atmosphere serving men, kids, and seniors with personalized care and attention.', premium: false },
-              { icon: FaMapMarkerAlt, title: 'Prime Location', text: 'Conveniently located in Bonita Springs with easy online booking and flexible scheduling.', premium: false },
+              { icon: FaMapMarkerAlt, title: 'Prime Location', text: 'Conveniently located in Naples with easy online booking and flexible scheduling. Wheelchair accessible with parking available.', premium: false },
             ].map((feature, index) => {
               const Icon = feature.icon
               return (
@@ -178,21 +182,21 @@ const Home = () => {
             {[
               { 
                 image: 'https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=700&h=500&fit=crop&auto=format&q=80',
-                title: 'Classic Haircut', 
-                desc: 'Precision cutting and styling', 
-                price: 'Starting at $25' 
+                title: 'Haircuts', 
+                desc: 'Fades, tapers, classic cuts', 
+                price: '$35' 
               },
               { 
                 image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=700&h=500&fit=crop&auto=format&q=80',
-                title: 'Skin Fade', 
-                desc: 'Clean, modern fade cuts', 
-                price: 'Starting at $30' 
+                title: 'Beard Trims', 
+                desc: 'Shaping and trimming', 
+                price: '$15' 
               },
               { 
                 image: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=700&h=500&fit=crop&auto=format&q=80',
-                title: 'Beard Grooming', 
-                desc: 'Shaping, trimming & styling', 
-                price: 'Starting at $15' 
+                title: 'Full Haircut + Beard', 
+                desc: 'Complete grooming package', 
+                price: '$45' 
               },
             ].map((service, index) => (
               <div 
@@ -262,7 +266,7 @@ const Home = () => {
           <div className="cta-content">
             <span className="accent-badge">Limited Availability</span>
             <h2>Ready for Your Best Cut?</h2>
-            <p>Join thousands of satisfied customers who trust LDB Cuts for their grooming needs</p>
+            <p>Join thousands of satisfied customers who trust Executive Cuts for their grooming needs</p>
             <div className="cta-buttons">
               <Link 
                 to="/booking"
@@ -271,10 +275,10 @@ const Home = () => {
                 Book Appointment Now
               </Link>
               <a 
-                href="tel:+12394657270" 
+                href="tel:+12392346204" 
                 className="btn btn-secondary"
               >
-                Call (239) 465-7270
+                Call (239) 234-6204
               </a>
             </div>
             <div className="cta-features">

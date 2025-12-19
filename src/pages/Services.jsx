@@ -16,40 +16,26 @@ import './Services.css'
 const Services = () => {
   const featuredServices = [
     { 
-      name: 'Full Service', 
-      duration: '60 min', 
-      price: '$50',
-      description: 'Complete grooming experience including haircut, beard trim, hot towel, and styling',
+      name: 'Full Haircut + Beard', 
+      duration: '45 min', 
+      price: '$45',
+      description: 'Complete grooming experience including haircut and beard trim',
       featured: true,
       Icon: FaCut
-    },
-    { 
-      name: 'Royal Service', 
-      duration: '75 min', 
-      price: '$65',
-      description: 'Our premium package with everything you need for the ultimate grooming experience',
-      featured: true,
-      Icon: FaCrown
     },
   ]
 
   const hairServices = [
-    { name: 'Regular Haircut', duration: '30 min', price: '$25', Icon: FaCut },
-    { name: 'Skin Fade', duration: '35 min', price: '$30', Icon: FaStore },
-    { name: 'Taper', duration: '30 min', price: '$25', Icon: FaCut },
-    { name: 'Buzz Cut', duration: '20 min', price: '$18', Icon: FaBolt },
+    { name: 'Haircuts (fades, tapers, classic cuts)', duration: '30 min', price: '$35', Icon: FaCut },
   ]
 
   const comboServices = [
-    { name: 'Haircut + Beard', duration: '45 min', price: '$35', Icon: FaCut },
-    { name: 'Skin Fade + Beard', duration: '50 min', price: '$40', Icon: FaStore },
-    { name: 'Haircut & Eyebrows', duration: '35 min', price: '$30', Icon: FaCut },
+    { name: 'Full Haircut + Beard', duration: '45 min', price: '$45', Icon: FaCut },
   ]
 
   const specialServices = [
-    { name: 'Kids Haircut', duration: '25 min', price: '$20', Icon: FaChild },
-    { name: 'Senior Haircut', duration: '30 min', price: '$22', Icon: FaUser },
-    { name: 'Beard Lineup', duration: '20 min', price: '$15', Icon: FaRazor },
+    { name: 'Kids\' Haircuts', duration: '25 min', price: '$30', Icon: FaChild },
+    { name: 'Beard Shaping and Trims', duration: '20 min', price: '$15', Icon: FaRazor },
   ]
 
   return (
@@ -188,7 +174,7 @@ const Services = () => {
           <div className="services-cta">
             <div className="cta-box">
               <h3>Ready to Get Started?</h3>
-              <p>Book your appointment today and experience the LDB Cuts difference</p>
+              <p>Book your appointment today and experience the Executive Cuts difference</p>
               <Link 
                 to="/booking"
                 className="btn btn-accent"

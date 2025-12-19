@@ -31,7 +31,7 @@ const Testimonials3D = ({ testimonials = [] }) => {
     {
       name: 'Michael Rodriguez',
       username: '@mrodriguez',
-      body: 'Best barbershop in Bonita Springs! The attention to detail is unmatched. Every cut is perfect.',
+      body: 'Best barbershop in Naples! The attention to detail is unmatched. Every cut is perfect.',
       img: 'https://randomuser.me/api/portraits/men/32.jpg',
       country: '🇺🇸',
     },

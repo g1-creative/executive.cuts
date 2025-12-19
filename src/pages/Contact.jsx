@@ -1,9 +1,9 @@
 import './Contact.css'
 
 const Contact = () => {
-  const address = "8951 Bonita Beach Rd SE Suite 580, Unit 8, Bonita Springs, FL 34135"
-  const phone = "(239) 465-7270"
-  const email = "ldbcutsbarbershop@gmail.com"
+  const address = "2650 Airport-Pulling Rd, Suite E, Naples, FL 34112"
+  const phone = "(239) 234-6204"
+  const email = "info@executivecuts.com"
 
   return (
     <div className="contact-page">
@@ -12,7 +12,7 @@ const Contact = () => {
           <span className="accent-badge">Let's Connect</span>
           <h1 className="section-title">Contact Us</h1>
           <p className="contact-intro">
-            We'd love to hear from you. Visit us in Bonita Springs or reach out through any of the channels below.
+            We'd love to hear from you. Visit us in Naples or reach out through any of the channels below.
           </p>
         </div>
       </section>
@@ -89,15 +89,15 @@ const Contact = () => {
                 <div className="hours-list">
                   <div className="hours-row">
                     <span className="day">Monday - Friday</span>
-                    <span className="time">9:00 AM - 6:00 PM</span>
+                    <span className="time">9:00 AM - 7:00 PM</span>
                   </div>
                   <div className="hours-row">
                     <span className="day">Saturday</span>
-                    <span className="time">8:00 AM - 5:00 PM</span>
+                    <span className="time">9:00 AM - 8:00 PM</span>
                   </div>
-                  <div className="hours-row closed">
+                  <div className="hours-row">
                     <span className="day">Sunday</span>
-                    <span className="time">Closed</span>
+                    <span className="time">10:00 AM - 3:00 PM</span>
                   </div>
                 </div>
                 <p className="hours-note">
@@ -114,7 +114,7 @@ const Contact = () => {
                 <h3>Follow Us</h3>
                 <div className="social-links">
                   <a 
-                    href="https://www.instagram.com/ldbcuts/" 
+                    href="https://www.instagram.com/executivecutsbarbershop/" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="social-link instagram"
@@ -138,7 +138,7 @@ const Contact = () => {
                     </svg>
                   </a>
                   <a 
-                    href="https://booksy.com/en-us/1073297_ldbcuts-barbershop_barber-shop_15815_bonita-springs" 
+                    href="https://booksy.com/en-us/811014_executive-cuts_barber-shop_15685_naples" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="social-link booksy"
@@ -153,7 +153,7 @@ const Contact = () => {
 
               <div className="contact-cta">
                 <a 
-                  href="https://booksy.com/en-us/1073297_ldbcuts-barbershop_barber-shop_15815_bonita-springs" 
+                  href="https://booksy.com/en-us/811014_executive-cuts_barber-shop_15685_naples" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="btn btn-accent"
@@ -180,7 +180,7 @@ const Contact = () => {
                     allowFullScreen
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
-                    title="LDB Cuts Barbershop Location"
+                    title="Executive Cuts Barber Shop Location"
                   ></iframe>
                 </div>
                 <a 
